@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LucroHub · Lista de espera</title>
+<meta name="description" content="A central de quem vende em marketplace: lucro, anúncios, pedidos e notas num lugar só. Entre na lista de espera.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b1d3a'/%3E%3Cg transform='translate(14 14) scale(.56)'%3E%3Crect x='4' y='4' width='26' height='26' rx='7' fill='%23fff'/%3E%3Crect x='34' y='4' width='26' height='26' rx='13' fill='%23c4b5fd'/%3E%3Crect x='4' y='34' width='26' height='26' rx='7' fill='%23fff'/%3E%3Crect x='34' y='34' width='26' height='26' rx='7' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<script src="config.js"></script>
+<style>
+:root{
+  color-scheme:light;
+  --brand-lighter:#f7f4fb; --brand-soft:#efeaf6; --brand-mid:#5b4478; --brand:#2b1d3a; --accent:#c4b5fd;
+  --surface:#f5f4f8; --card:#ffffff; --line:#ebe8f0; --line-strong:#8f889b; --ink:#1a1523; --ink-muted:#6b6476;
+  --positive:#157a3e; --positive-soft:#e2f4e8; --negative:#b42318; --negative-soft:#fdeceb;
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --radius-md:12px; --radius-lg:20px; --radius-xl:32px;
+  --shadow-card:0 1px 2px rgba(26,21,35,.06),0 1px 1px rgba(26,21,35,.04);
+  --shadow-float:0 12px 32px rgba(26,21,35,.16),0 2px 6px rgba(26,21,35,.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--surface)}
+body{font-family:var(--font);color:var(--ink);font-size:15px;line-height:22px;-webkit-font-smoothing:antialiased}
+.page{min-height:100vh;min-height:100dvh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;padding:16px}
+.hero{position:relative;overflow:hidden;background:var(--brand);color:#fff;border-radius:var(--radius-xl);padding:48px;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:32px;height:32px}
+.logo .wm{font-size:22px;letter-spacing:-.02em}.logo .wm b{font-weight:800}.logo .wm span{font-weight:400;color:var(--accent)}
+h1{margin:0;font-size:48px;line-height:54px;letter-spacing:-.02em}
+h1 .l{display:block;font-weight:300}h1 .s{display:block;font-weight:700}h1 em{font-style:normal;color:var(--accent)}
+.lead{margin:20px 0 0;font-size:18px;line-height:28px;color:rgba(255,255,255,.82);max-width:520px}
+.benefits{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;max-width:480px;position:relative;z-index:1}
+.benefits li{display:flex;align-items:center;gap:12px;background:var(--brand-soft);color:var(--brand);border-radius:999px;padding:6px 20px 6px 6px;font-weight:500}
+.selo{width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;flex:none}
+.selo svg{width:18px;height:18px}
+.foot{font-size:13px;color:rgba(255,255,255,.7);position:relative;z-index:1}
+.blocks{position:absolute;right:-56px;bottom:-56px;width:260px;height:260px;display:grid;grid-template-columns:1fr 1fr;gap:16px;pointer-events:none}
+.blocks i{display:block;border-radius:var(--radius-lg);background:var(--brand-mid)}.blocks i:nth-child(2){border-radius:50%;background:var(--accent)}
+.side{display:grid;place-items:center;padding:24px 8px}
+.card{width:100%;max-width:440px;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:32px;display:grid;gap:20px}
+.card h2{margin:0;font-size:22px;line-height:28px;font-weight:700}
+.card p{margin:4px 0 0;color:var(--ink-muted)}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px}
+label>span{font-size:13px;line-height:18px;font-weight:600}
+input,select{width:100%;height:48px;border:1px solid var(--line-strong);border-radius:var(--radius-md);padding:0 14px;font:500 16px var(--font);color:var(--ink);background:var(--card)}
+input:focus,select:focus{outline:2px solid var(--brand);outline-offset:2px}
+.btn{height:48px;border:0;border-radius:999px;background:var(--brand);color:#fff;font:600 14px var(--font);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{background:var(--brand-mid)}.btn:disabled{opacity:.6;cursor:wait}
+.btn svg{width:18px;height:18px}
+.msg{border-radius:var(--radius-md);padding:10px 14px;font-size:13px;line-height:18px;font-weight:600}
+.msg.err{background:var(--negative-soft);color:var(--negative)}
+.done{display:grid;gap:12px;text-align:center;justify-items:center;padding:12px 0}
+.done .selo{width:56px;height:56px;background:var(--positive)}.done .selo svg{width:26px;height:26px}
+.done b{font-size:20px;line-height:26px}
+.note{font-size:12px;line-height:16px;color:var(--ink-muted)}
+.note a{color:var(--brand)}
+[hidden]{display:none!important}
+@media (max-width:900px){
+  .page{grid-template-columns:minmax(0,1fr);padding:12px;gap:12px;align-content:start}
+  .hero{padding:28px 24px;gap:24px}
+  h1{font-size:32px;line-height:38px}.lead{font-size:16px;line-height:24px}
+  .benefits{display:none}.blocks{display:none}
+  .side{padding:0}.card{max-width:none;padding:24px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <section class="hero" aria-label="LucroHub">
+    <div class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="26" height="26" rx="7" fill="#fff"/><rect x="34" y="4" width="26" height="26" rx="13" fill="#c4b5fd"/><rect x="4" y="34" width="26" height="26" rx="7" fill="#fff"/><rect x="34" y="34" width="26" height="26" rx="7" fill="#fff"/></svg><span class="wm"><b>Lucro</b><span>Hub</span></span></div>
+    <div>
+      <h1><span class="l">Organizado para lucrar.</span><span class="s">No controle para <em>crescer.</em></span></h1>
+      <p class="lead">A central de quem vende na Shopee e no TikTok Shop: quanto sobra de verdade, quais anúncios dão retorno, pedidos e notas num lugar só.</p>
+      <ul class="benefits">
+        <li><span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>Lucro de cada venda, já sem as taxas</li>
+        <li><span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Quais anúncios dão lucro e o que fazer</li>
+        <li><span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Meta de lucro com aviso quando bater</li>
+        <li><span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/></svg></span>Passo a passo para quem está começando</li>
+      </ul>
+    </div>
+    <div class="foot">Estamos abrindo aos poucos. Entre na lista e seja dos primeiros.</div>
+    <div class="blocks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </section>
+  <main class="side">
+    <div class="card">
+      <div id="formWrap">
+        <h2>Entre na lista de espera</h2>
+        <p>A gente te chama assim que abrir uma vaga.</p>
+        <form id="f" novalidate style="margin-top:20px">
+          <label><span>Seu nome</span><input id="nome" autocomplete="name" maxlength="80" placeholder="Como podemos te chamar?"></label>
+          <label><span>WhatsApp ou e-mail</span><input id="contato" autocomplete="email" maxlength="120" required placeholder="(11) 99999-9999 ou voce@email.com"></label>
+          <label><span>Você já vende?</span><select id="perfil">
+            <option value="comecando">Ainda não, estou começando</option>
+            <option value="shopee">Sim, na Shopee</option>
+            <option value="tiktok">Sim, no TikTok Shop</option>
+            <option value="os-dois">Sim, nos dois</option>
+            <option value="outro">Sim, em outro lugar</option>
+          </select></label>
+          <div class="msg err" id="err" role="alert" hidden></div>
+          <button class="btn" id="go" type="submit">Quero entrar na lista<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="note">Usamos seu contato só para avisar sobre o LucroHub. Sem spam.</p>
+        </form>
+      </div>
+      <div class="done" id="done" hidden role="status">
+        <span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <b>Pronto, você está na lista! 🎉</b>
+        <p>Vamos te chamar assim que abrir uma vaga. Enquanto isso, siga a gente para dicas de como lucrar mais.</p>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+(()=>{
+  const cfg=window.LUCROHUB_CONFIG||{};
+  const $=id=>document.getElementById(id);
+  const origem=(new URLSearchParams(location.search).get("utm_source")||"site").slice(0,40);
+  $("f").addEventListener("submit", async ev=>{
+    ev.preventDefault();
+    const contato=$("contato").value.trim(), nome=$("nome").value.trim();
+    const ehEmail=/^\S+@\S+\.\S+$/.test(contato), ehFone=contato.replace(/\D/g,"").length>=10;
+    if(!ehEmail && !ehFone){ $("err").textContent="Digite um WhatsApp com DDD ou um e-mail válido."; $("err").hidden=false; $("contato").focus(); return; }
+    $("err").hidden=true; $("go").disabled=true;
+    try{
+      if(!cfg.supabaseUrl||!cfg.supabaseAnonKey) throw new Error("config");
+      const r=await fetch(cfg.supabaseUrl+"/rest/v1/waitlist",{method:"POST",headers:{apikey:cfg.supabaseAnonKey,Authorization:"Bearer "+cfg.supabaseAnonKey,"Content-Type":"application/json",Prefer:"return=minimal"},
+        body:JSON.stringify({nome:nome||null, contato, perfil:$("perfil").value, origem})});
+      if(!r.ok) throw new Error("http "+r.status);
+      $("formWrap").hidden=true; $("done").hidden=false;
+    }catch(e){ $("err").textContent="Não deu para salvar agora. Tente de novo em instantes."; $("err").hidden=false; }
+    $("go").disabled=false;
+  });
+})();
+</script>
+</body>
+</html>

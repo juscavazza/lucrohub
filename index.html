@@ -670,6 +670,119 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
 .headline{font-size:28px;line-height:34px;letter-spacing:-.02em}
 .headline .l{font-weight:300;display:block}
 .headline .s{font-weight:700;display:block}
+/* ===== v3: guia, metas, avisos, pedidos, anúncios, notas ===== */
+.grow{flex:1;min-width:0}
+.mbox-lg{max-width:640px}
+.mbox{max-height:calc(100vh - 32px);overflow:auto}
+/* onboarding */
+.onb{max-width:560px;gap:var(--space-6)}
+.onb-opts{display:grid;gap:12px}
+.onb-opt{appearance:none;display:flex;align-items:center;gap:14px;text-align:left;width:100%;padding:14px 18px 14px 14px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--card);cursor:pointer;font:inherit;color:var(--ink)}
+.onb-opt:hover,.onb-opt:focus-visible{border-color:var(--brand);background:var(--brand-lighter)}
+.onb-opt b{display:block;font-size:16px}
+.onb-opt small{display:block;color:var(--ink-muted);font-size:13px;line-height:18px;margin-top:2px}
+/* meta */
+.meta-card{display:grid;gap:12px}
+.meta-empty{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.meta-empty .grow{display:grid;gap:2px}
+.meta-nums{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.meta-bar{height:12px;border-radius:999px;background:var(--brand-soft);overflow:hidden}
+.meta-bar i{display:block;height:100%;border-radius:999px;background:var(--accent);min-width:4px}
+.meta-bar.done i{background:var(--positive)}
+/* sininho */
+.topright{display:flex;align-items:center;gap:8px}
+.bellw{position:relative}
+.bell{position:relative;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow-card);display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.bell:hover{border-color:var(--line-strong)}
+.bell svg{width:20px;height:20px}
+.bell .bdg{position:absolute;top:-2px;right:-2px;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--negative);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;border:2px solid var(--surface)}
+.avmenu{position:absolute;top:calc(100% + 8px);right:0;z-index:40;width:min(380px,calc(100vw - 32px));background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);box-shadow:var(--shadow-float);padding:8px;display:grid;gap:2px;max-height:70vh;overflow:auto}
+.avmenu h3{padding:8px 10px 4px}
+.av{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:var(--radius-sm);cursor:pointer;border:0;background:none;width:100%;text-align:left;font:inherit;color:var(--ink)}
+.av:hover{background:var(--brand-lighter)}
+.av .selo{width:32px;height:32px}.av .selo svg{width:16px;height:16px}
+.av.bad .selo{background:var(--negative)}.av.attn .selo{background:var(--warning)}.av.ok .selo{background:var(--positive)}
+.av b{display:block;font-size:14px;line-height:20px}
+.av span.t{display:block;font-size:13px;line-height:18px;color:var(--ink-muted)}
+.av .new{width:8px;height:8px;border-radius:50%;background:var(--negative);margin-top:6px;flex:none}
+.avempty{padding:16px;text-align:center;color:var(--ink-muted);font-size:14px}
+/* guia */
+.gprog{display:grid;gap:10px}
+.gsteps{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.gstep{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;align-items:start;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:20px;border:1px solid transparent}
+.gstep.cur{border-color:var(--brand)}
+.gstep.done{background:var(--gray-2)}
+.gstep .gn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand);font-weight:700}
+.gstep.done .gn{background:var(--positive);color:#fff}
+.gstep.cur .gn{background:var(--brand);color:#fff}
+.gstep .gn svg{width:20px;height:20px}
+.gstep h3{font-size:16px;line-height:22px}
+.gstep.done h3{color:var(--ink-muted);text-decoration:line-through;text-decoration-thickness:1px}
+.gstep p{color:var(--ink-muted);font-size:14px;line-height:20px;margin-top:4px}
+.gstep .gact{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.gstep .gact .btn{height:36px;padding:0 16px}
+.gcheck{display:grid;gap:8px;margin:12px 0 0;padding:12px 14px;list-style:none;background:var(--gray-2);border-radius:var(--radius-md)}
+.gcheck li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:20px}
+.gcheck input{margin-top:1px}
+/* pedidos */
+.okpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4)}
+@media (max-width:960px){.okpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.olist{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);overflow:hidden}
+.orow{border-bottom:1px solid var(--line)}.orow:last-child{border-bottom:0}
+.orow-h{display:grid;grid-template-columns:minmax(0,1fr) auto auto 32px;gap:14px;align-items:center;min-height:64px;padding:10px 16px;cursor:pointer}
+.orow-h:hover,.orow.open .orow-h{background:var(--gray-2)}
+.orow .on{display:grid;gap:2px;min-width:0}
+.orow .on b{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.orow .on span{font-size:12px;color:var(--ink-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.orow .ov{text-align:right;display:grid;gap:2px;justify-items:end}
+.orow .ov b{font-weight:600;white-space:nowrap}
+.orow .os{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.orow.open .exp svg{transform:rotate(90deg)}
+.obody{padding:4px 16px 20px;background:var(--gray-2);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-6)}
+@media (max-width:760px){.obody{grid-template-columns:minmax(0,1fr)}.orow-h{grid-template-columns:minmax(0,1fr) auto 32px}.orow .os{display:none}}
+.conta{display:grid;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);padding:4px 14px}
+.conta div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.conta div:last-child{border-bottom:0;font-weight:700;font-size:15px}
+.conta span:first-child{color:var(--ink-muted)}
+.conta div:last-child span:first-child{color:var(--ink)}
+.oacts{display:grid;gap:10px;align-content:start}
+.oacts .btn{justify-content:center}
+.oitems{display:grid;gap:4px;font-size:14px}
+.oitems div{display:flex;justify-content:space-between;gap:8px}
+.oitems span{color:var(--ink-muted)}
+.chave{font-family:ui-monospace,monospace;font-size:12px;word-break:break-all;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px}
+.nfebox{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+/* anúncios */
+.adsum{display:grid;gap:var(--space-4)}
+.adsline{font-size:17px;line-height:26px}
+.adsline b{font-weight:700}
+.adsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:var(--space-4);align-items:start}
+.adc{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:var(--space-6);display:grid;gap:14px;border-top:4px solid var(--line)}
+.adc.lucro{border-top-color:var(--positive)}.adc.limite{border-top-color:var(--warning)}.adc.prejuizo,.adc.semvenda{border-top-color:var(--negative)}
+.adc .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.adc h3{font-size:16px;line-height:22px}
+.adc .nums{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.adc .nums div{display:grid;gap:2px}
+.adc .nums span{font-size:12px;color:var(--ink-muted)}
+.adc .nums b{font-size:20px;line-height:26px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.adc .fazer{background:var(--brand-lighter);border-radius:var(--radius-md);padding:12px 14px;font-size:14px;line-height:20px}
+.adc .fazer b{display:block;font-size:13px;margin-bottom:2px;color:var(--brand)}
+.admeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px}
+.admeta input{width:84px;height:36px;text-align:right}
+.adman{min-width:760px}
+.adman input,.adman select{height:36px;width:100%}
+.adman td{height:52px}
+.ahist{display:flex;gap:8px;flex-wrap:wrap}
+.tiprow{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:18px;color:var(--ink-muted)}
+.tiprow svg{width:16px;height:16px;flex:none;margin-top:1px;color:var(--brand)}
+/* taxas por canal */
+#taxTT[hidden],#taxShopee[hidden]{display:none!important}
+.remember{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-muted);cursor:pointer}
+.remember input{width:18px;height:18px;margin:0;accent-color:var(--brand)}
+.empty .selo{margin-bottom:4px}
+[data-fis],#nfeCnpj,#nfeInt,#nfeTok,[data-am="nome"]{text-align:left!important}
+.admeta .money{width:110px}.admeta input{width:100%}
+
 /* ===== Plataforma: login, conta e Shopee ===== */
 #auth{position:fixed;inset:0;z-index:100;background:var(--surface);overflow:auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);padding:16px;gap:16px}
 #auth[hidden]{display:none!important}
@@ -732,6 +845,7 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
 <aside class="side">
   <div class="brandname"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="26" height="26" rx="7" fill="#ffffff"/><rect x="34" y="4" width="26" height="26" rx="13" fill="var(--accent)"/><rect x="4" y="34" width="26" height="26" rx="7" fill="#ffffff"/><rect x="34" y="34" width="26" height="26" rx="7" fill="#ffffff"/></svg><span class="wm"><b>Lucro</b><span>Hub</span></span></div>
   <nav class="tabs" role="tablist" aria-label="Seções">
+    <button role="tab" data-tab="guia" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/></svg><span>Meu guia</span></button>
     <button role="tab" data-tab="resultado" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg><span>Faturamento</span></button>
     <div class="subnav" id="rvNav">
       <button data-rv="geral">Visão geral</button>
@@ -740,11 +854,11 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
       <button data-rv="produtos">Por produto</button>
       <button data-rv="lancar">Lançar números</button>
     </div>
+    <button role="tab" data-tab="pedidos" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span>Pedidos</span></button>
     <button role="tab" data-tab="produtos" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg><span>Produtos</span></button>
+    <button role="tab" data-tab="anuncios" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Anúncios</span></button>
     <button role="tab" data-tab="calculadora" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h4"/></svg><span>Calculadora</span></button>
-    <button role="tab" data-tab="analise" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg><span>Análise por print</span></button>
     <button role="tab" data-tab="lojas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0V9z"/><path d="M5 13v7h14v-7"/></svg><span>Lojas</span></button>
-    <button role="tab" data-tab="estrategia" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Estratégia</span></button>
   </nav>
   <div class="store">
     <span class="sync" id="syncState">Carregando…</span>
@@ -761,7 +875,9 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
     </button>
     <div class="smenu" id="storeMenu" role="menu" hidden></div>
   </div>
+  <div class="topright"><div class="bellw"><button class="bell" id="bellBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="avMenu" aria-label="Avisos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bdg" id="bellBdg" hidden></span></button><div class="avmenu" id="avMenu" hidden></div></div>
   <button class="btn" id="addStoreTop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Adicionar loja</button>
+  </div>
 </div>
 
 
@@ -786,6 +902,7 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
   <div class="rview stack" data-rv="geral">
     <div id="seedNotice"></div>
     <div class="kpis" id="kpis"></div>
+    <div id="metaCard"></div>
     <div class="card stack" style="gap:var(--space-4)">
       <div class="row between">
         <h2>Mês a mês</h2>
@@ -906,18 +1023,30 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
 
   <div class="card stack" style="gap:var(--space-4)">
     <div>
-      <h2>Taxas usadas no cálculo</h2>
+      <h2>Taxas usadas no cálculo · <span id="taxTitleCanal">Shopee</span></h2>
       <p class="t-caption muted" style="margin-top:2px">Mudam por tipo de conta e faixa de preço. Confira no detalhamento de um pedido seu.</p>
     </div>
-    <div class="form-grid">
+    <div class="form-grid" id="taxShopee">
       <label class="field"><span>Comissão Shopee (%)</span><input type="text" id="c_comissao" inputmode="decimal" data-pct><em>Inclui taxa de transação e programa de frete.</em></label>
       <label class="field"><span>Taxa fixa por item</span><div class="money"><input type="text" id="c_taxaFixa" inputmode="decimal"></div></label>
+    </div>
+    <div id="taxTT" class="stack" style="gap:12px" hidden>
+      <p class="mini">Taxas do TikTok Shop em vigor desde 15/07/2026. Confira na sua Central do Vendedor.</p>
+      <div class="form-grid">
+        <label class="field"><span>Produto abaixo de R$ 50: comissão (%)</span><input type="text" id="c_ttCom1" inputmode="decimal"></label>
+        <label class="field"><span>Abaixo de R$ 50: taxa por item</span><div class="money"><input type="text" id="c_ttFixa1" inputmode="decimal"></div></label>
+        <label class="field"><span>A partir de R$ 50: comissão (%)</span><input type="text" id="c_ttCom2" inputmode="decimal"></label>
+        <label class="field"><span>A partir de R$ 50: taxa por item</span><div class="money"><input type="text" id="c_ttFixa2" inputmode="decimal"></div></label>
+      </div>
+      <label class="remember"><input type="checkbox" id="c_ttFrete"> Participo do programa de frete (mais 6%, até R$ 50 por item)</label>
+    </div>
+    <div class="form-grid">
       <label class="field"><span>Impostos sobre a venda (%)</span><input type="text" id="c_imposto" inputmode="decimal" data-pct><em>Simples Nacional, por exemplo. MEI: use 0 e lance o DAS em outros custos.</em></label>
+      <label class="field"><span>Frete que você paga por venda</span><div class="money"><input type="text" id="c_frete" inputmode="decimal"></div><em>Deixe 0 se o comprador ou o programa de frete paga.</em></label>
     </div>
   </div>
 </section>
 
-<!-- ============ ANÁLISE ============ -->
 <section id="tab-calculadora" class="tabpane stack" hidden>
   <div class="head">
     <div>
@@ -965,7 +1094,7 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
       </summary>
       <div class="stack" style="gap:var(--space-4);margin-top:var(--space-6)">
         <p class="t-caption muted">Pegue até 5 anúncios com mais de 1 mil vendas. Em "Peças", diga quantas vêm no anúncio: 1 para unidade, 3 para kit de 3.</p>
-        <div class="row">
+        <div class="row" hidden>
           <button class="btn" id="cShots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg>Preencher com prints</button>
           <input type="file" id="cShotsIn" accept="image/png,image/jpeg,image/webp" multiple hidden>
           <span class="t-caption muted" id="cShotsMsg">O Claude lê preço, vendas e se é kit.</span>
@@ -988,43 +1117,40 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
   </div>
 </section>
 
-<section id="tab-analise" class="tabpane stack" hidden>
-  <div>
-    <h1>Mande os prints e receba a análise</h1>
-    <p class="muted" style="margin-top:4px">Prints de Informações Gerenciais, Shopee Ads ou de um anúncio. A análise segue a estratégia e cruza com os seus números.</p>
+
+<!-- ============ GUIA ============ -->
+<section id="tab-guia" class="tabpane stack" hidden>
+  <div class="head">
+    <div><h1>Meu guia</h1><p class="muted" style="margin-top:4px">O passo a passo para sua loja crescer. Faça um de cada vez.</p></div>
+    <button class="btn" type="button" data-guia-perfil>Mudar meu perfil</button>
   </div>
-  <div class="card stack" style="gap:var(--space-4)">
-    <div class="drop" id="drop" tabindex="0" role="button" aria-label="Escolher prints">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
-      <b class="t-label">Arraste os prints aqui ou toque para escolher</b>
-      <span class="t-caption muted" id="dropHint">PNG ou JPG.</span>
-      <input type="file" id="fileIn" accept="image/png,image/jpeg,image/webp" multiple hidden>
-    </div>
-    <div class="thumbs" id="thumbs"></div>
-    <div class="field">
-      <span>O que tem nos prints</span>
-      <div class="groups" id="foco">
-        <button class="chip" data-foco="geral" aria-pressed="true">Visão geral da loja</button>
-        <button class="chip" data-foco="ads" aria-pressed="false">Shopee Ads</button>
-        <button class="chip" data-foco="anuncio" aria-pressed="false">Um anúncio (raio-X)</button>
-        <button class="chip" data-foco="produtos" aria-pressed="false">Produtos e estoque</button>
-      </div>
-    </div>
-    <label class="field"><span>Observação (opcional)</span><textarea id="obs" rows="2" placeholder="Ex.: o print é de outubro; quero saber se vale reativar a meia esportiva"></textarea></label>
-    <div class="row">
-      <button class="btn primary" id="analyze">Analisar prints</button>
-      <button class="btn" id="stopAnalyze" hidden>Parar</button>
-      <span class="t-caption muted" id="analyzeState"></span>
-    </div>
-  </div>
-  <div id="resultBox"></div>
-  <div class="card" id="historyPanel" hidden>
-    <h2>Análises anteriores</h2>
-    <div class="history" id="history" style="margin-top:var(--space-4)"></div>
-  </div>
+  <div id="guiaBody" class="stack"></div>
 </section>
 
-<!-- ============ ESTRATÉGIA ============ -->
+<!-- ============ PEDIDOS ============ -->
+<section id="tab-pedidos" class="tabpane stack" hidden>
+  <div class="head">
+    <div><h1>Pedidos</h1><p class="muted" style="margin-top:4px">Quanto sobrou em cada venda, o que falta enviar e as notas fiscais.</p></div>
+    <div class="row">
+      <select id="ordPer" aria-label="Período"><option value="7d">Últimos 7 dias</option><option value="mes" selected>Este mês</option><option value="mespassado">Mês passado</option></select>
+      <button class="btn" type="button" id="ordSync"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M3 21v-5h5M21 3v5h-5"/></svg> Atualizar</button>
+    </div>
+  </div>
+  <div id="ordBody" class="stack"></div>
+</section>
+
+<!-- ============ ANÚNCIOS ============ -->
+<section id="tab-anuncios" class="tabpane stack" hidden>
+  <div class="head">
+    <div><h1>Anúncios</h1><p class="muted" style="margin-top:4px">Veja quais anúncios dão lucro e o que fazer com cada um.</p></div>
+    <div class="row">
+      <div class="seg" id="adsPer" role="tablist" aria-label="Período"><button type="button" role="tab" data-adsdias="7" aria-selected="true">Última semana</button><button type="button" role="tab" data-adsdias="30" aria-selected="false">Último mês</button></div>
+      <button class="btn primary" type="button" id="adsGo">Analisar anúncios</button>
+    </div>
+  </div>
+  <div id="adsBody" class="stack"></div>
+</section>
+
 <section id="tab-lojas" class="tabpane stack" hidden>
   <div class="head">
     <div>
@@ -1035,61 +1161,53 @@ input,select,textarea{border-radius:var(--radius-md);height:44px;background:var(
   <div class="lojas" id="lojasGrid"></div>
 </section>
 
-<section id="tab-estrategia" class="tabpane stack" hidden>
-  <div>
-    <h1>A estratégia por trás das análises</h1>
-    <p class="muted" style="margin-top:4px;max-width:70ch">Lojas Shopee crescem em cima de 1 ou 2 produtos campeões sustentados por anúncios. O trabalho é entender por que o campeão vence, copiar isso de propósito no próximo produto e nunca depender de um só.</p>
-  </div>
-  <div class="two">
-    <div class="card">
-      <h2>O método em 7 passos</h2>
-      <ol class="steps" style="margin-top:var(--space-4)">
-        <li><div><b>Diagnóstico mês a mês</b><p class="muted">Vendas, pedidos, visitantes, conversão e ticket médio. Nos anúncios: investimento, vendas e retorno. A Shopee guarda só uns 6 meses de anúncios, então exporte todo mês.</p></div></li>
-        <li><div><b>Achar o campeão e a dependência</b><p class="muted">Se mais de 80% das vendas vêm dos anúncios, qualquer pausa derruba a loja.</p></div></li>
-        <li><div><b>Raio-X do campeão</b><p class="muted">Fotos, vídeo, título, variações, preço, avaliações, estoque, impressões, cliques, conversão e retorno dos anúncios.</p></div></li>
-        <li><div><b>Escolher o sucessor pelos dados</b><p class="muted">Conversão alta com pouco tráfego é o melhor sinal: o produto vende, só não aparece.</p></div></li>
-        <li><div><b>Copiar o anúncio do campeão</b><p class="muted">Aplicar o checklist ao lado, item por item.</p></div></li>
-        <li><div><b>Comprar tráfego com meta de ROAS baixa</b><p class="muted">Produto novo: meta de 8 a 10 por 3 a 4 semanas, depois 12, 15 e 18.</p></div></li>
-        <li><div><b>Juntar avaliações e escalar</b><p class="muted">Cupom de seguidor, Afiliados e pedido de avaliação até umas 50 avaliações. Depois subir orçamento e meta.</p></div></li>
-      </ol>
-    </div>
-    <div class="card">
-      <h2>Checklist do anúncio campeão</h2>
-      <ul class="check" style="margin-top:var(--space-4)" id="checklist"></ul>
-    </div>
-  </div>
-  <div class="stack" style="gap:var(--space-4)">
-    <h2>Números de referência</h2>
-    <div class="table-wrap">
-      <table class="ref-table">
-        <thead><tr><th>Métrica</th><th>Saudável</th><th>Sinal de alerta</th></tr></thead>
-        <tbody>
-          <tr><td>ROAS: cada R$ 1 em anúncio trouxe</td><td>R$ 17 a R$ 25 em vendas</td><td>menos de R$ 10 por 2 semanas</td></tr>
-          <tr><td>Gasto com anúncios ÷ vendas</td><td>4 a 6%</td><td>acima de 10%</td></tr>
-          <tr><td>Cliques ÷ impressões (CTR)</td><td>3,5 a 4,5%</td><td>abaixo de 3%</td></tr>
-          <tr><td>Adição ao carrinho ÷ cliques</td><td>~7,5%</td><td>abaixo de 5%</td></tr>
-          <tr><td>Conversão do anúncio</td><td>2,5 a 3%</td><td>abaixo de 1% depois de 1 mil cliques</td></tr>
-          <tr><td>Conversão da loja</td><td>~2%</td><td>abaixo de 1,5%</td></tr>
-          <tr><td>Vendas via anúncios ÷ vendas totais</td><td>abaixo de 70%</td><td>acima de 90%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="card">
-      <h2>Rotina de proteção</h2>
-      <p style="margin-top:var(--space-2)"><b>Toda semana:</b> saldo de anúncios com Recarga Automática ligada, estoque do campeão, retorno e cliques das 3 principais campanhas.</p>
-      <p style="margin-top:var(--space-2)"><b>Todo mês:</b> exportar relatórios, atualizar o raio-X, testar 1 novo candidato a campeão.</p>
-      <p style="margin-top:var(--space-2)"><b>Regra de ouro:</b> ter sempre um segundo produto com anúncio completo e histórico rodando, para o dia em que o campeão acabar.</p>
-    </div>
-  </div>
-</section>
 </main>
 </div>
+<div class="modal" id="onbModal" hidden>
+  <div class="mbox onb" role="dialog" aria-modal="true" aria-labelledby="onbTitle">
+    <div><h2 id="onbTitle" class="headline"><span class="l">Bem-vindo ao LucroHub.</span><span class="s">Como está sua loja hoje?</span></h2>
+    <p class="muted" style="margin-top:8px">Assim o guia mostra o passo a passo certo para você. Dá para mudar depois.</p></div>
+    <div class="onb-opts">
+      <button type="button" class="onb-opt" data-perfil="comecando"><span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><span><b>Estou começando</b><small>Ainda não vendo ou acabei de abrir a loja.</small></span></button>
+      <button type="button" class="onb-opt" data-perfil="vendendo"><span class="selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span><span><b>Já vendo</b><small>Minha loja já tem vendas e quero organizar e crescer.</small></span></button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="metaModal" hidden>
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="metaTitle">
+    <h2 id="metaTitle">Meta de lucro</h2>
+    <p class="muted">Quanto você quer que sobre no fim do mês, depois de pagar produto, taxas e anúncios.</p>
+    <label class="field"><span id="metaLbl">Meta do mês</span><div class="money"><input id="metaIn" inputmode="decimal" placeholder="0,00" autocomplete="off"></div></label>
+    <label class="remember"><input type="checkbox" id="metaAll" checked> Usar a mesma meta nos próximos meses</label>
+    <div class="row" style="justify-content:flex-end"><button class="btn" type="button" id="metaRm">Tirar meta</button><button class="btn" type="button" id="metaCancel">Cancelar</button><button class="btn primary" type="button" id="metaOk">Salvar meta</button></div>
+  </div>
+</div>
+
+<div class="modal" id="nfeModal" hidden>
+  <div class="mbox mbox-lg" role="dialog" aria-modal="true" aria-labelledby="nfeTitle">
+    <div><h2 id="nfeTitle">Emissor de notas fiscais</h2>
+    <p class="muted" style="margin-top:4px">O LucroHub emite as notas por um emissor parceiro, a <a href="https://focusnfe.com.br" target="_blank" rel="noopener">Focus NFe</a>. Você cria a conta lá, cadastra sua empresa e o certificado digital, e cola o token aqui.</p></div>
+    <div class="form-grid">
+      <label class="field"><span>Ambiente</span><select id="nfeAmb"><option value="homologacao">Teste (as notas não valem)</option><option value="producao">Valendo (notas reais)</option></select></label>
+      <label class="field"><span>Token da Focus NFe</span><input id="nfeTok" type="password" autocomplete="off" placeholder="Cole o token aqui"><em id="nfeTokHint">Fica guardado só no servidor. Nem você vê depois.</em></label>
+      <label class="field"><span>CNPJ da empresa</span><input id="nfeCnpj" inputmode="numeric" placeholder="00.000.000/0000-00"></label>
+      <label class="field"><span>Estado da empresa</span><select id="nfeUf"><option value="">Escolha</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
+      <label class="field"><span>Regime de imposto</span><select id="nfeReg"><option value="mei">MEI</option><option value="simples">Simples Nacional</option><option value="normal">Lucro Presumido ou Real</option></select></label>
+      <label class="field"><span>O que você faz</span><select id="nfeAtv"><option value="revenda">Revendo produtos</option><option value="fabricacao">Fabrico os produtos</option></select></label>
+      <label class="field"><span>CNPJ do marketplace (opcional)</span><input id="nfeInt" inputmode="numeric" placeholder="Peça ao seu contador"><em>Vai na nota como intermediador da venda.</em></label>
+    </div>
+    <p class="mini neg" id="nfeErr" hidden></p>
+    <div class="row" style="justify-content:flex-end"><button class="btn" type="button" id="nfeCancel">Cancelar</button><button class="btn primary" type="button" id="nfeOk">Salvar</button></div>
+  </div>
+</div>
+
 <div class="modal" id="addModal" hidden>
   <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="addTitle">
     <h2 id="addTitle">Adicionar loja</h2>
     <label class="field"><span>Nome da loja</span><input id="newName" placeholder="Ex.: Elegância Kids" autocomplete="off"></label>
     <label class="field"><span>Onde ela vende</span><select id="newPlat"><option>Shopee</option><option>Mercado Livre</option><option>TikTok Shop</option><option>Amazon</option><option>Outra</option></select></label>
-    <p class="mini">A loja começa vazia. Para trazer os dados, abra o Seller Centre dessa loja no Chrome e peça ao Claude para puxar, ou lance os números à mão.</p>
+    <p class="mini">A loja começa vazia. Se for Shopee, conecte em Lojas para puxar tudo sozinho. Se for outro canal, lance os números do mês em Faturamento.</p>
     <p class="mini neg" id="addErr" hidden></p>
     <div class="row" style="justify-content:flex-end"><button class="btn" id="addCancel">Cancelar</button><button class="btn primary" id="addOk">Criar loja</button></div>
   </div>
@@ -1244,7 +1362,7 @@ document.addEventListener("focusout", e=>{
   const v=parseBR(i.value); if(isFinite(v)) i.value=NUM2.format(v);
 });
 // ---------- estado ----------
-const blank = () => ({ v:1, loja:"", config:{comissao:20, taxaFixa:4, imposto:0}, products:[], months:{}, analyses:[], checklist:{}, calc:null, calcHist:[] });
+const blank = () => ({ v:1, loja:"", config:{comissao:20, taxaFixa:4, imposto:0}, products:[], months:{}, analyses:[], checklist:{}, calc:null, calcHist:[], metas:{}, guia:null, adsAnalises:[], adsManual:[], adsCfg:{} });
 let S = blank();
 let curMonth = nowKey();
 const selected = new Set();
@@ -1296,10 +1414,10 @@ function normalize(d){
   const b = blank();
   if (!d || typeof d!=="object") return b;
   try{ d = JSON.parse(JSON.stringify(d)); }catch(e){ return b; } // dados da conta chegam congelados: trabalhar numa cópia editável
-  return { v:1, loja:d.loja||"", config:Object.assign(b.config, d.config||{}),
+  return Object.assign({}, d, { v:1, loja:d.loja||"", config:Object.assign(b.config, d.config||{}),
     products:Array.isArray(d.products)? d.products.filter(p=>p&&p.id) : [],
     months:d.months && typeof d.months==="object" ? d.months : {},
-    analyses:Array.isArray(d.analyses)? d.analyses : [], checklist:d.checklist||{}, calc:d.calc||null, calcHist:Array.isArray(d.calcHist)? d.calcHist.filter(h=>h&&h.id) : [] };
+    analyses:Array.isArray(d.analyses)? d.analyses : [], checklist:d.checklist||{}, calc:d.calc||null, calcHist:Array.isArray(d.calcHist)? d.calcHist.filter(h=>h&&h.id) : [] });
 }
 async function loadLoja(id){
   if (dbNs && userId){ try{ const sn=await docFor(id).get(); if (sn.exists) return normalize(sn.data()); }catch(_){} }
@@ -1356,7 +1474,7 @@ async function boot(){
 const prodById = id => S.products.find(p=>p.id===id);
 function unitEcon(p, pecas=1, precoV){
   const c=S.config, preco=n(precoV ?? p.preco);
-  const taxa = preco*n(c.comissao)/100 + n(c.taxaFixa);
+  const taxa = taxaVenda(preco) + n(c.frete);
   const imp = preco*n(c.imposto)/100;
   const custo = pecas*n(p.custo) + n(p.embalagem);
   const lucro = preco - taxa - imp - custo;
@@ -1396,7 +1514,7 @@ function calcMonthOne(key){
   }
   const itensBase = itens || n(m.pedidos);
   const usouRepasse = has(m.repasse) && n(m.repasse)>0;
-  const taxas = usouRepasse ? Math.max(0, fat - dev - n(m.repasse)) : (fat*n(c.comissao)/100 + itensBase*n(c.taxaFixa));
+  const taxas = usouRepasse ? Math.max(0, fat - dev - n(m.repasse)) : ((itensBase ? itensBase*taxaVenda(fat/itensBase) : taxaVenda(fat)) + (n(m.pedidos)||itensBase)*n(c.frete));
   const imposto = (fat-dev)*n(c.imposto)/100;
   const ads = n(m.ads), outros=n(m.outros);
   const lucro = fat - dev - taxas - imposto - ads - cmv - outros;
@@ -1435,12 +1553,12 @@ function pickDefaultMonth(){
   if (!S.months[curMonth] && keys.length) curMonth = keys[keys.length-1];
 }
 let rT=null; window.addEventListener("resize", ()=>{ clearTimeout(rT); rT=setTimeout(renderChart,150); });
-function refreshNumbers(){ renderResults(); renderChart(); renderProdKpis(); renderSeedNotice(); }
-const _showTab=showTab; showTab=function(t){ _showTab(t); if(t==="lojas") renderLojas(); if(t==="calculadora") renderCalc(); };
+function refreshNumbers(){ renderResults(); renderChart(); renderProdKpis(); renderSeedNotice(); renderMeta(); renderAvisos(); }
+const _showTab=showTab; showTab=function(t){ _showTab(t); if(t==="lojas") renderLojas(); if(t==="calculadora") renderCalc(); if(t==="guia") renderGuia(); if(t==="pedidos") loadOrders(); if(t==="anuncios") renderAds(); };
 function renderAll(){
   renderStoreBar(); renderLojas(); renderCalc();
   renderConfig(); renderMonthSelect(); renderMonthForm(); renderUnits();
-  refreshNumbers(); renderGroups(); renderProducts(); renderHistory(); renderChecklist(); renderSeedNotice(); renderShopeeBits();
+  refreshNumbers(); renderGroups(); renderProducts(); renderSeedNotice(); renderV3(); renderShopeeBits();
 }
 
 function renderSeedNotice(){
@@ -1566,6 +1684,7 @@ async function loadConnections(){
   renderShopeeBits();
 }
 function shopeeBox(lojaId){
+  { const li=lojaInfo(lojaId); if (li && li.plataforma && !/shopee/i.test(li.plataforma)) return `<div class="lshp"><div class="top"><span class="t-label">${esc(li.plataforma)}</span><span class="chip neutral">Lançamento à mão</span></div><span class="mini">A conexão automática é só com a Shopee por enquanto. Lance os números do mês em Faturamento → Lançar números.</span></div>`; }
   if (!LH.online) return `<div class="lshp"><span class="mini">A conexão com a Shopee funciona na versão online do LucroHub.</span></div>`;
   const c=SHP[lojaId], busy=shpBusy[lojaId];
   if (!c) return `<div class="lshp"><div class="top"><span class="t-label">Shopee</span><span class="chip neutral">Não conectada</span></div>
@@ -1673,6 +1792,630 @@ async function afterBootShopee(){
   } else if (st==="erro") toast("A Shopee não autorizou", msg||"Tente de novo.", true);
 }
 
+// ---------- v3: ícones ----------
+const IC = {
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+  target:'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  box:'<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>',
+  megaphone:'<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+  truck:'<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+  file:'<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/>',
+  alert:'<path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>',
+  link:'<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
+  tag:'<path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r=".5"/>',
+  party:'<path d="M5.8 11.3 2 22l10.7-3.8"/><path d="M4 3h.01M22 8h.01M15 2h.01M22 20h.01"/><path d="M11 13c1.9 1.9 2.9 4.2 2.2 5s-3.1-.3-5-2.2-2.9-4.2-2.2-5 3.1.3 5 2.2z"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+  download:'<path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/>',
+  copy:'<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+  chev:'<path d="M9 6l6 6-6 6"/>',
+  info:'<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  bag:'<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>'
+};
+const ic = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]||""}</svg>`;
+const selo = k => `<span class="selo">${ic(k)}</span>`;
+const sgn = v => (v<0?"− ":"+ ")+brl(Math.abs(v));
+const dataBR = iso => { if(!iso) return ""; const d=new Date(iso); return d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"}); };
+function goTo(go){ if(!go) return; const [k,v]=go.split(":"); if(k==="rv") goRV(v); else { showTab(v); try{ history.replaceState(null,"","#"+v); }catch(_){} window.scrollTo({top:0}); } }
+document.addEventListener("click", e=>{ const b=e.target.closest("[data-go]"); if(b){ e.preventDefault(); closeAvisos(); goTo(b.dataset.go); } });
+
+// ---------- taxas por canal (Shopee / TikTok Shop) ----------
+function canalAtual(){ const l=lojaInfo(curLoja); return (l&&l.plataforma)||"Shopee"; }
+const isTT = () => /tiktok/i.test(canalAtual());
+function taxaVenda(P){
+  const c=S.config; P=n(P);
+  if (isTT()){
+    const t = P < 50 ? [c.ttCom1 ?? 10, c.ttFixa1 ?? 4] : [c.ttCom2 ?? 6, c.ttFixa2 ?? 6];
+    return P*n(t[0])/100 + n(t[1]) + (c.ttFrete ? Math.min(P*0.06, 50) : 0);
+  }
+  return P*n(c.comissao)/100 + n(c.taxaFixa);
+}
+function taxaDesc(){
+  const c=S.config;
+  if (isTT()) return `TikTok Shop: ${NUM.format(n(c.ttCom1 ?? 10))}% + ${brl(c.ttFixa1 ?? 4)} abaixo de R$ 50, ${NUM.format(n(c.ttCom2 ?? 6))}% + ${brl(c.ttFixa2 ?? 6)} a partir de R$ 50${c.ttFrete?", + 6% do programa de frete":""}`;
+  return `${NUM.format(c.comissao)}% + ${brl(c.taxaFixa)} por item`;
+}
+// Menor preço que cobre custos + lucro desejado (procura por divisão, funciona com faixas de taxa).
+function precoPara(base){
+  const im=n(S.config.imposto)/100, fr=n(S.config.frete);
+  const g = P => P - taxaVenda(P) - P*im - fr - base;
+  let lo=0, hi=Math.max(100, (base+fr)*10+100);
+  for (let i=0;i<80;i++){ const mid=(lo+hi)/2; if (g(mid)>=0) hi=mid; else lo=mid; }
+  return hi;
+}
+
+// ---------- configuração de taxas ----------
+function renderTaxCfg(){
+  const tt=isTT(), c=S.config;
+  const a=$("#taxShopee"), b=$("#taxTT"); if(!a||!b) return;
+  a.hidden=tt; b.hidden=!tt;
+  const set=(id,v,money)=>{ const el=$("#"+id); if(el && document.activeElement!==el) el.value = money? fmtMoney(v) : fmtPlain(v); };
+  set("c_ttCom1", c.ttCom1 ?? 10); set("c_ttFixa1", c.ttFixa1 ?? 4, true); set("c_ttCom2", c.ttCom2 ?? 6); set("c_ttFixa2", c.ttFixa2 ?? 6, true);
+  set("c_frete", c.frete ?? 0, true);
+  const fr=$("#c_ttFrete"); if (fr) fr.checked=!!c.ttFrete;
+  const h=$("#taxTitleCanal"); if(h) h.textContent = tt ? "TikTok Shop" : "Shopee";
+}
+[["c_ttCom1","ttCom1"],["c_ttFixa1","ttFixa1"],["c_ttCom2","ttCom2"],["c_ttFixa2","ttFixa2"],["c_frete","frete"]].forEach(([id,f])=>{
+  const el=$("#"+id); if(!el) return;
+  el.addEventListener("input", e=>{ const v=parseBR(e.target.value); S.config[f]=isFinite(v)?v:0; scheduleSave(); updateProdCalcs(); renderProdKpis(); refreshNumbers(); updateCalc(); });
+});
+{ const fr=$("#c_ttFrete"); if (fr) fr.addEventListener("change", e=>{ S.config.ttFrete=e.target.checked; scheduleSave(); updateProdCalcs(); renderProdKpis(); refreshNumbers(); updateCalc(); }); }
+
+// ---------- meta de lucro ----------
+function metaDoMes(k){ const M=S.metas||{}; return has(M[k]) ? n(M[k]) : (has(M.padrao) ? n(M.padrao) : null); }
+function renderMeta(){
+  const box=$("#metaCard"); if(!box || !ORD) return;
+  if (isYear(curMonth)){ box.innerHTML=""; return; }
+  const meta=metaDoMes(curMonth), mes=MESES_L[+curMonth.slice(5)-1];
+  if (!meta){
+    box.innerHTML = `<div class="card meta-empty">${selo("target")}<div class="grow"><b>Defina sua meta de lucro de ${mes}</b><span class="mini">Quanto você quer que sobre no fim do mês. O LucroHub te avisa quando você bater.</span></div><button class="btn primary" type="button" data-meta-edit>Definir meta</button></div>`;
+    return;
+  }
+  const r=calcMonth(curMonth), lucro=r.lucro, pct=Math.max(0,lucro)/meta*100, bateu=lucro>=meta, falta=meta-lucro;
+  const ped=n(r.m.pedidos)||r.itensBase, porPed = ped && lucro>0 ? lucro/ped : null;
+  box.innerHTML = `<div class="card meta-card">
+    <div class="row between"><span class="t-label muted">Meta de lucro de ${mes}</span><button class="btn text" type="button" data-meta-edit>Mudar meta</button></div>
+    <div class="meta-nums"><span class="t-kpi ${lucro<0?"neg":""}">${lucro<0?"− ":""}${brl(Math.abs(lucro))}</span><span class="muted">de ${brl(meta)}</span>${bateu?`<span class="chip up">Meta batida 🎉</span>`:`<span class="chip neutral">${Math.round(Math.min(pct,999))}% da meta</span>`}</div>
+    <div class="meta-bar ${bateu?"done":""}" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(Math.min(pct,100))}" aria-label="Progresso da meta"><i style="width:${Math.min(100,pct)}%"></i></div>
+    <p class="mini">${bateu ? `Você passou da meta em ${brl(lucro-meta)}. Que tal subir a meta do mês que vem?` : `Faltam ${brl(falta)}${porPed ? `, mais ou menos ${Math.ceil(falta/porPed)} vendas no ritmo de agora` : ""}.`}</p>
+  </div>`;
+  if (bateu && curMonth===nowKey() && !(S.metaAvisada||{})[curMonth]){
+    S.metaAvisada = Object.assign({}, S.metaAvisada, {[curMonth]:true}); scheduleSave();
+    toast("Meta de lucro batida 🎉", `Você bateu a meta de ${mes}: ${brl(lucro)} de lucro.`);
+  }
+}
+function openMeta(){
+  if (isYear(curMonth)) return;
+  const k=curMonth; $("#metaLbl").textContent = "Meta de "+monthLong(k);
+  const v=metaDoMes(k); $("#metaIn").value = v ? fmtMoney(v) : ""; $("#metaRm").hidden=!v;
+  $("#metaModal").hidden=false; setTimeout(()=>$("#metaIn").focus(),30);
+}
+document.addEventListener("click", e=>{ if (e.target.closest("[data-meta-edit]")) openMeta(); });
+$("#metaCancel").addEventListener("click", ()=>{ $("#metaModal").hidden=true; });
+$("#metaRm").addEventListener("click", ()=>{ const M=Object.assign({},S.metas); delete M[curMonth]; if($("#metaAll").checked) delete M.padrao; S.metas=M; scheduleSave(); $("#metaModal").hidden=true; renderMeta(); renderAvisos(); });
+$("#metaOk").addEventListener("click", ()=>{
+  const v=parseBR($("#metaIn").value); if(!isFinite(v)||v<=0){ $("#metaIn").focus(); return; }
+  const M=Object.assign({},S.metas); M[curMonth]=v; if ($("#metaAll").checked) M.padrao=v; S.metas=M;
+  scheduleSave(); $("#metaModal").hidden=true; renderMeta(); renderAvisos(); if(!$("#tab-guia").hidden) renderGuia();
+});
+$("#metaIn").addEventListener("keydown", e=>{ if(e.key==="Enter") $("#metaOk").click(); });
+
+// ---------- guia passo a passo ----------
+const CHECK = [
+  "Título de 60 a 100 caracteres: produto + atributo + material + uso + cores/tamanhos + quantidade",
+  "7 a 9 fotos: capa limpa, em uso, todas as variações juntas, medidas e comparativo de kits",
+  "Vídeo de 15 a 30 segundos como primeira mídia",
+  "Variações de cor e de quantidade (kits)",
+  "Preço cheio riscado + cupom ou frete grátis",
+  "Descrição com diferenciais, medidas exatas e cuidados",
+  "Peso e medidas reais no cadastro",
+  "Estoque para pelo menos 30 dias de venda"
+];
+const comPrejuizo = () => S.products.filter(p=>has(p.custo) && has(p.preco) && unitEcon(p).lucro<0);
+const adsRecente = () => (S.adsAnalises||[]).some(a=>Date.now()-new Date(a.em).getTime() < 8*864e5);
+const todosComCusto = () => S.products.length>0 && S.products.filter(p=>!(p.shopee&&p.shopee.status==="fora")).every(p=>has(p.custo));
+const GUIA = {
+  comecando: [
+    {id:"produto", t:"Escolha o que vai vender", d:"Procure um produto que já vende bem: veja quantas vendas os concorrentes têm no mês. Produto bom é o que tem procura.", manual:true},
+    {id:"preco", t:"Descubra o preço certo", d:"Na Calculadora você coloca quanto paga no produto e quanto quer ganhar. Ela mostra o preço já com as taxas.", go:"tab:calculadora", auto:()=>(S.calcHist||[]).length>0},
+    {id:"produtos", t:"Cadastre os produtos com o custo", d:"Em Produtos, coloque quanto você paga em cada um. Sem isso, o lucro aparece maior do que é.", go:"tab:produtos", auto:todosComCusto},
+    {id:"loja", t:"Abra a loja e conecte aqui", d:"Crie sua loja na Shopee ou no TikTok Shop. Na Shopee, conecte em Lojas para os números entrarem sozinhos.", go:"tab:lojas", auto:()=>!!SHP[curLoja] || Object.keys(S.months).length>0},
+    {id:"anuncio", t:"Capriche no anúncio", d:"Antes de publicar, confira cada item da lista.", manual:true, lista:true},
+    {id:"meta", t:"Defina sua meta de lucro", d:"Quanto você quer que sobre no mês. O LucroHub te avisa quando bater.", go:"rv:geral", auto:()=>!!metaDoMes(nowKey())},
+    {id:"ads", t:"Analise os anúncios toda semana", d:"Em Anúncios, toque em Analisar. O LucroHub diz o que fazer com cada um.", go:"tab:anuncios", auto:adsRecente}
+  ],
+  vendendo: [
+    {id:"conectar", t:"Conecte sua loja", d:"Em Lojas, toque em Conectar Shopee. Pedidos, vendas e produtos entram sozinhos.", go:"tab:lojas", auto:()=>!!SHP[curLoja] || Object.keys(S.months).length>0},
+    {id:"custos", t:"Coloque o custo de cada produto", d:"Em Produtos, informe quanto você paga em cada um. É assim que o lucro fica certo.", go:"tab:produtos", auto:todosComCusto},
+    {id:"lucro", t:"Veja quanto sobrou de verdade", d:"Em Faturamento, o lucro do mês já vem sem taxas, anúncios e custos.", go:"rv:lucro", auto:()=>Object.keys(S.months).length>0},
+    {id:"meta", t:"Defina sua meta de lucro", d:"Quanto você quer que sobre no mês. O LucroHub te avisa quando bater.", go:"rv:geral", auto:()=>!!metaDoMes(nowKey())},
+    {id:"ads", t:"Analise os anúncios da última semana", d:"Em Anúncios, toque em Analisar. Você vê quais dão lucro e o que mudar.", go:"tab:anuncios", auto:adsRecente},
+    {id:"prejuizo", t:"Arrume os produtos com prejuízo", d:"Se algum produto vende no prejuízo, ajuste o preço ou o custo. A Calculadora ajuda.", go:"tab:produtos", auto:()=>S.products.length>0 && !comPrejuizo().length},
+    {id:"pedidos", t:"Organize envios e notas", d:"Em Pedidos você vê o que falta enviar e as notas para emitir.", go:"tab:pedidos", manual:true},
+    {id:"anuncio", t:"Melhore o anúncio que mais vende", d:"Confira cada item da lista no seu anúncio campeão e copie o que funciona nos outros.", manual:true, lista:true}
+  ]
+};
+function passos(){ const g=S.guia||{}; return (GUIA[g.perfil]||GUIA.vendendo).map(s=>({...s, feito: s.auto ? !!s.auto() : !!((g.feito||{})[s.id])})); }
+function proximoPasso(){ if(!S.guia||!S.guia.perfil) return null; return passos().find(s=>!s.feito) || null; }
+function renderGuia(){
+  const box=$("#guiaBody"); if(!box) return;
+  if (!S.guia || !S.guia.perfil){
+    box.innerHTML = `<div class="card meta-empty">${selo("check")}<div class="grow"><b>Conte como está sua loja</b><span class="mini">Assim o guia mostra o passo a passo certo para você.</span></div><button class="btn primary" type="button" data-guia-perfil>Começar</button></div>`;
+    return;
+  }
+  const ps=passos(), feitos=ps.filter(s=>s.feito).length, prox=ps.find(s=>!s.feito);
+  const perfilTxt = S.guia.perfil==="comecando" ? "Você está começando" : "Você já vende";
+  box.innerHTML = `
+    <div class="card gprog">
+      <div class="row between"><span class="t-label muted">${perfilTxt}</span><span class="chip ${feitos===ps.length?"up":"neutral"}">${feitos} de ${ps.length} feitos</span></div>
+      <div class="meta-bar ${feitos===ps.length?"done":""}"><i style="width:${feitos/ps.length*100}%"></i></div>
+      <p class="mini">${feitos===ps.length ? "Tudo feito. Agora é repetir toda semana: analisar os anúncios e olhar o lucro. 🎉" : `Próximo passo: <b>${esc(prox.t)}</b>.`}</p>
+    </div>
+    <ol class="gsteps">${ps.map((s,i)=>`
+      <li class="gstep ${s.feito?"done":""} ${prox&&prox.id===s.id?"cur":""}">
+        <span class="gn">${s.feito? ic("check") : i+1}</span>
+        <div>
+          <h3>${esc(s.t)}</h3><p>${esc(s.d)}</p>
+          ${s.lista ? `<ul class="gcheck">${CHECK.map((t,k)=>`<li><input type="checkbox" id="gck${k}" data-gck="${k}" ${(S.checklist||{})["ck"+k]?"checked":""}><label for="gck${k}">${esc(t)}</label></li>`).join("")}</ul>` : ""}
+          <div class="gact">
+            ${s.go && !s.feito ? `<button class="btn ${prox&&prox.id===s.id?"primary":""}" type="button" data-go="${s.go}">Ir agora ${ic("arrow")}</button>` : ""}
+            ${s.manual ? `<label class="remember"><input type="checkbox" data-gfeito="${s.id}" ${s.feito?"checked":""}> Já fiz</label>` : (s.feito ? `<span class="mini">Feito automaticamente</span>` : "")}
+          </div>
+        </div>
+      </li>`).join("")}
+    </ol>`;
+}
+document.addEventListener("change", e=>{
+  const f=e.target.closest("[data-gfeito]");
+  if (f){ S.guia=Object.assign({feito:{}},S.guia); S.guia.feito=Object.assign({},S.guia.feito,{[f.dataset.gfeito]:f.checked}); scheduleSave(); renderGuia(); renderAvisos(); return; }
+  const c=e.target.closest("[data-gck]");
+  if (c){ S.checklist=Object.assign({},S.checklist,{["ck"+c.dataset.gck]:c.checked}); scheduleSave(); }
+});
+function openOnb(){ $("#onbModal").hidden=false; }
+document.addEventListener("click", e=>{
+  if (e.target.closest("[data-guia-perfil]")) { openOnb(); return; }
+  const b=e.target.closest("[data-perfil]"); if(!b) return;
+  S.guia=Object.assign({feito:{}}, S.guia, {perfil:b.dataset.perfil}); scheduleSave();
+  $("#onbModal").hidden=true; showTab("guia"); try{ history.replaceState(null,"","#guia"); }catch(_){} renderGuia(); renderAvisos();
+});
+
+// ---------- avisos (sininho) ----------
+function avisos(){
+  const out=[], add=(id,icon,tit,txt,go,tipo="")=>out.push({id,icon,tit,txt,go,tipo});
+  const k=nowKey(), meta=metaDoMes(k);
+  if (meta){ const r=calcMonth(k); if (r.lucro>=meta) add("meta-"+k,"party","Meta de lucro batida 🎉",`Você fez ${brl(r.lucro)} de lucro em ${MESES_L[+k.slice(5)-1]}.`,"rv:geral","ok"); }
+  const c=SHP[curLoja]; if (c && c.status==="expirada") add("shp-exp","link","A conexão com a Shopee venceu","Conecte de novo em Lojas para os números continuarem entrando.","tab:lojas","bad");
+  if (ORD.loja===curLoja){
+    const env=ORD.lista.filter(o=>o.status==="READY_TO_SHIP").length;
+    if (env) add("enviar-"+env,"truck",`${env} pedido${env>1?"s":""} para enviar`,"Gere a etiqueta em Pedidos.","tab:pedidos","attn");
+    const sn=ORD.lista.filter(precisaNota).length;
+    if (sn && NFE.configurado) add("notas-"+sn,"file",`${sn} pedido${sn>1?"s":""} sem nota fiscal`,"Emita em Pedidos antes de enviar.","tab:pedidos","attn");
+  }
+  const ult=(S.adsAnalises||[])[0];
+  if (ult){ const ruins=ult.campanhas.filter(x=>x.veredito==="prejuizo"||x.veredito==="semvenda").length; if (ruins) add("ads-"+ult.em,"megaphone",`${ruins} anúncio${ruins>1?"s":""} dando prejuízo`,"Veja o que fazer na análise de anúncios.","tab:anuncios","bad"); }
+  const pj=comPrejuizo(); if (pj.length) add("prej-"+pj.length,"alert",`${pj.length} produto${pj.length>1?"s":""} vendendo no prejuízo`, pj.slice(0,2).map(p=>p.nome).join(", ")+(pj.length>2?"…":""),"tab:produtos","bad");
+  const sc=S.products.filter(p=>!(p.shopee&&p.shopee.status==="fora") && !has(p.custo)).length;
+  if (sc) add("semcusto-"+sc,"tag",`${sc} produto${sc>1?"s":""} sem custo`,"Sem o custo, o lucro aparece maior do que é.","tab:produtos","attn");
+  const est=S.products.filter(p=>{ const s=stockStatus(p); return s.cls==="bad-soft"; });
+  if (est.length) add("estoque-"+est.length,"box",`Repor estoque de ${est.length} produto${est.length>1?"s":""}`, est.slice(0,2).map(p=>p.nome).join(", ")+(est.length>2?"…":""),"tab:produtos","attn");
+  const pp=proximoPasso(); if (pp) add("guia-"+pp.id,"check","Próximo passo do seu guia",pp.t,"tab:guia","");
+  return out;
+}
+function renderAvisos(){
+  const b=$("#bellBdg"); if(!b || !ORD) return;
+  const vistos=new Set(S.avisosVistos||[]), list=avisos(), novos=list.filter(a=>!vistos.has(a.id)).length;
+  b.textContent = novos>9 ? "9+" : String(novos); b.hidden = !novos;
+  $("#bellBtn").setAttribute("aria-label", novos ? `Avisos: ${novos} novos` : "Avisos");
+  const m=$("#avMenu"); if (!m.hidden) fillAvisos();
+}
+function fillAvisos(){
+  const vistos=new Set(S.avisosVistos||[]), list=avisos();
+  $("#avMenu").innerHTML = `<h3>Avisos</h3>` + (list.length ? list.map(a=>`<button type="button" class="av ${a.tipo}" data-go="${a.go}">${selo(a.icon)}<span class="grow"><b>${esc(a.tit)}</b><span class="t">${esc(a.txt)}</span></span>${vistos.has(a.id)?"":`<span class="new" aria-label="novo"></span>`}</button>`).join("") : `<div class="avempty">Tudo em dia por aqui.</div>`);
+}
+function closeAvisos(){ const m=$("#avMenu"); if(m && !m.hidden){ m.hidden=true; $("#bellBtn").setAttribute("aria-expanded","false"); } }
+$("#bellBtn").addEventListener("click", e=>{
+  e.stopPropagation();
+  const m=$("#avMenu");
+  if (!m.hidden){ closeAvisos(); return; }
+  fillAvisos(); m.hidden=false; $("#bellBtn").setAttribute("aria-expanded","true");
+  S.avisosVistos = avisos().map(a=>a.id); scheduleSave();
+  setTimeout(()=>{ $("#bellBdg").hidden=true; }, 300);
+});
+document.addEventListener("click", e=>{ if (!e.target.closest(".bellw")) closeAvisos(); });
+document.addEventListener("keydown", e=>{ if (e.key==="Escape") closeAvisos(); });
+
+// ---------- pedidos ----------
+var ORD = {loja:null, lista:[], carregado:false, carregando:false, filtro:"todos", aberto:null, erro:""};
+var NFE = {configurado:false, carregado:false, ambiente:"homologacao", empresa:{}, tokenFinal:null};
+const STATUS = {
+  UNPAID:["Aguardando pagamento","neutral"], READY_TO_SHIP:["Para enviar","attn"], PROCESSED:["Etiqueta pronta","neutral"],
+  RETRY_SHIP:["Reenviar","attn"], SHIPPED:["Enviado","neutral"], TO_CONFIRM_RECEIVE:["Enviado","neutral"], COMPLETED:["Entregue","ok-soft"],
+  IN_CANCEL:["Cancelando","bad-soft"], CANCELLED:["Cancelado","bad-soft"], TO_RETURN:["Devolução","bad-soft"]
+};
+const cancelado = o => ["CANCELLED","IN_CANCEL","UNPAID"].includes(o.status);
+const precisaNota = o => !cancelado(o) && ["READY_TO_SHIP","PROCESSED","RETRY_SHIP"].includes(o.status) && !(o.nota && o.nota.status==="autorizado");
+function periodoRange(p){
+  const d=new Date(), ini=new Date(d.getFullYear(), d.getMonth(), 1);
+  if (p==="7d") return [new Date(Date.now()-7*864e5), null];
+  if (p==="mespassado") return [new Date(d.getFullYear(), d.getMonth()-1, 1), ini];
+  return [ini, null];
+}
+async function loadOrders(force){
+  if (!LH.sb || !LH.user){ ORD = Object.assign(ORD,{loja:curLoja, lista:[], carregado:true}); renderPedidos(); return; }
+  if (ORD.carregando) return;
+  if (!force && ORD.carregado && ORD.loja===curLoja) { renderPedidos(); return; }
+  ORD.carregando=true; ORD.erro=""; renderPedidos();
+  try{
+    const [de, ate] = periodoRange($("#ordPer").value);
+    let q = LH.sb.from("orders").select("*").eq("loja_id", curLoja).gte("criado_em", de.toISOString());
+    if (ate) q = q.lt("criado_em", ate.toISOString());
+    const {data, error} = await q.order("criado_em", {ascending:false}).limit(1000);
+    if (error) throw error;
+    ORD = Object.assign(ORD, {loja:curLoja, lista:data||[], carregado:true});
+  }catch(e){ ORD.erro = "Não deu para carregar os pedidos: "+(e.message||e); ORD.carregado=true; ORD.loja=curLoja; ORD.lista=[]; }
+  ORD.carregando=false; renderPedidos(); renderAvisos();
+}
+async function loadNfe(){
+  if (!LH.sb || !LH.user || NFE.carregado) return;
+  try{ const r=await LH.fn("nfe",{acao:"estado"}); NFE=Object.assign(NFE, r, {carregado:true}); }catch(_){ NFE.carregado=true; }
+}
+function contaPedido(o){
+  const c=S.config, f=o.financeiro||null, venda=n(o.total);
+  const byItem=new Map(S.products.filter(p=>p.shopee&&p.shopee.itemId).map(p=>[String(p.shopee.itemId),p]));
+  let custo=0, emb=0, semCusto=false;
+  for (const it of o.itens||[]){ const p=byItem.get(String(it.itemId)); if(!p || !has(p.custo)){ semCusto=true; continue; } custo += n(it.qtd)*n(p.custo); emb += n(p.embalagem); }
+  let taxas, frete=0, recebe, estimado=false;
+  if (f && f.escrow_amount!=null){
+    recebe=n(f.escrow_amount);
+    frete=Math.max(0, n(f.actual_shipping_fee) - n(f.shopee_shipping_rebate) - n(f.buyer_paid_shipping_fee));
+    taxas=Math.max(0, venda - recebe - frete);
+  } else {
+    estimado=true;
+    taxas=(o.itens||[]).reduce((a,it)=>a + n(it.qtd)*taxaVenda(it.preco), 0);
+    frete=n(c.frete); recebe=venda-taxas-frete;
+  }
+  const imposto=venda*n(c.imposto)/100;
+  const mk=(o.criado_em||"").slice(0,7), m=S.months[mk]||{}, ped=n(m.pedidos);
+  const anuncio = n(m.ads) && ped ? n(m.ads)/ped : 0;
+  const lucro = recebe - custo - emb - imposto - anuncio;
+  return {venda, taxas, frete, recebe, custo, emb, imposto, anuncio, lucro, estimado, semCusto};
+}
+function renderPedidos(){
+  const box=$("#ordBody"); if(!box) return;
+  if (!LH.online){
+    box.innerHTML = `<div class="card empty">${selo("bag")}<b>Pedidos aparecem na versão online</b><p class="mini">Entre com sua conta no LucroHub e conecte a Shopee para ver cada venda aqui.</p></div>`; return;
+  }
+  if (!SHP[curLoja] && !ORD.lista.length){
+    box.innerHTML = `<div class="card empty">${selo("link")}<b>Conecte a Shopee para ver seus pedidos</b><p class="mini">Cada venda aparece aqui com quanto sobrou, o envio e a nota fiscal.</p>${isTT()?`<p class="mini">TikTok Shop: a conexão automática ainda não está disponível. Lance os números do mês em Faturamento.</p>`:`<button class="btn primary" type="button" data-shconnect="${esc(curLoja)}">Conectar Shopee</button>`}</div>`;
+    return;
+  }
+  if (ORD.carregando && !ORD.lista.length){ box.innerHTML = `<div class="card empty"><div class="thinking"><span class="dot"></span>Carregando pedidos…</div></div>`; return; }
+  const L=ORD.lista, validos=L.filter(o=>!cancelado(o));
+  const contas=new Map(L.map(o=>[o.order_sn, contaPedido(o)]));
+  const totV=validos.reduce((a,o)=>a+n(o.total),0), totL=validos.reduce((a,o)=>a+contas.get(o.order_sn).lucro,0);
+  const env=L.filter(o=>o.status==="READY_TO_SHIP"), semNota=L.filter(precisaNota);
+  const algumSemCusto=validos.some(o=>contas.get(o.order_sn).semCusto);
+  const f=ORD.filtro, vis = f==="enviar" ? env : f==="nota" ? semNota : L;
+  const kpi=(l,v,note,cls="")=>`<div class="kpi-card"><span class="t-label muted">${l}</span><span class="t-kpi num ${cls}">${v}</span><span class="t-caption muted">${note}</span></div>`;
+  box.innerHTML = `
+    ${ORD.erro?`<div class="notice"><p>${esc(ORD.erro)}</p></div>`:""}
+    <div class="okpis">
+      ${kpi("Pedidos", NUM.format(validos.length), "sem os cancelados")}
+      ${kpi("Vendas", brl(totV), "soma dos pedidos")}
+      ${kpi("Sobrou", (totL<0?"− ":"")+brl(Math.abs(totL)), algumSemCusto?"falta custo de alguns produtos":"depois de tudo", totL<0?"neg":"pos")}
+      ${kpi("Para enviar", NUM.format(env.length), semNota.length && NFE.configurado ? `${semNota.length} sem nota` : "pedidos esperando")}
+    </div>
+    ${NFE.carregado && !NFE.configurado ? `<div class="notice nfebox">${selo("file")}<p class="grow"><b>Notas fiscais:</b> ligue um emissor para emitir a nota de cada pedido com um clique.</p><button class="btn" type="button" data-nfe-cfg>Configurar notas</button></div>` : ""}
+    <div class="row between">
+      <div class="seg" role="tablist" aria-label="Filtro">
+        <button type="button" data-ofil="todos" aria-selected="${f==="todos"}">Todos <span>${L.length}</span></button>
+        <button type="button" data-ofil="enviar" aria-selected="${f==="enviar"}">Para enviar <span>${env.length}</span></button>
+        <button type="button" data-ofil="nota" aria-selected="${f==="nota"}">Sem nota <span>${semNota.length}</span></button>
+      </div>
+      ${NFE.configurado?`<button class="btn text" type="button" data-nfe-cfg>Notas: ${NFE.ambiente==="producao"?"valendo":"modo teste"}</button>`:""}
+    </div>
+    ${vis.length ? `<div class="olist">${vis.map(o=>orderRow(o, contas.get(o.order_sn))).join("")}</div>`
+      : `<div class="card empty"><b>${f==="todos"?"Nenhum pedido neste período":"Nada pendente aqui"}</b><p class="mini">${f==="todos"?"Toque em Atualizar para buscar os pedidos na Shopee.":"Tudo em dia."}</p></div>`}`;
+}
+function orderRow(o, k){
+  const st=STATUS[o.status]||[o.status||"—","neutral"], aberto=ORD.aberto===o.order_sn;
+  const itens=o.itens||[], nome = itens.length ? itens[0].nome + (itens.length>1?` + ${itens.length-1}`:"") : "Pedido";
+  const nota = o.nota && o.nota.status==="autorizado" ? `<span class="chip ok-soft">Com nota</span>` : (o.nota && /processando/.test(o.nota.status||"") ? `<span class="chip attn">Nota em análise</span>` : (precisaNota(o) ? `<span class="chip attn">Sem nota</span>` : ""));
+  const lc = cancelado(o) ? `<span class="t-caption muted">cancelado</span>` : `<span class="chip ${k.lucro<0?"down":"up"}">${k.lucro<0?"↓ ":"↑ "}${sgn(k.lucro).slice(2)}</span>`;
+  return `<div class="orow ${aberto?"open":""}" data-osn="${esc(o.order_sn)}">
+    <div class="orow-h" data-otoggle>
+      <span class="on"><b>${esc(nome)}</b><span>${dataBR(o.criado_em)} · pedido ${esc(String(o.order_sn).slice(-6))}${k.estimado&&!cancelado(o)?" · estimado":""}</span></span>
+      <span class="os"><span class="chip ${st[1]}">${st[0]}</span>${nota}</span>
+      <span class="ov"><b>${brl(o.total)}</b>${lc}</span>
+      <button class="exp" type="button" aria-label="Ver detalhes" aria-expanded="${aberto}">${ic("chev")}</button>
+    </div>
+    ${aberto ? orderBody(o,k) : ""}
+  </div>`;
+}
+function orderBody(o,k){
+  const linha=(l,v)=>`<div><span>${l}</span><span>${v}</span></div>`;
+  const nota=o.nota||null, autorizada = nota && nota.status==="autorizado";
+  const podeEnviar = ["READY_TO_SHIP","PROCESSED","RETRY_SHIP"].includes(o.status);
+  return `<div class="obody">
+    <div class="stack" style="gap:12px">
+      <div class="oitems">${(o.itens||[]).map(it=>`<div><b>${esc(it.qtd)}× ${esc(it.nome)}${it.variacao?` <span>(${esc(it.variacao)})</span>`:""}</b><span>${brl(n(it.preco)*n(it.qtd))}</span></div>`).join("")}</div>
+      <div class="conta">
+        ${linha("Valor da venda", brl(k.venda))}
+        ${linha("Taxas da "+(o.canal==="tiktok"?"TikTok Shop":"Shopee"), "− "+brl(k.taxas))}
+        ${k.frete ? linha("Frete pago por você", "− "+brl(k.frete)) : ""}
+        ${linha("Custo dos produtos"+(k.semCusto?" (falta custo)":""), "− "+brl(k.custo))}
+        ${k.emb ? linha("Embalagem", "− "+brl(k.emb)) : ""}
+        ${k.imposto ? linha("Imposto", "− "+brl(k.imposto)) : ""}
+        ${k.anuncio ? linha("Anúncio (média do mês)", "− "+brl(k.anuncio)) : ""}
+        ${linha("Sobrou para você", `<span class="${k.lucro<0?"neg":"pos"}">${sgn(k.lucro)}</span>`)}
+      </div>
+      ${k.estimado ? `<p class="mini">Taxas estimadas: a Shopee ainda não fechou o extrato deste pedido.</p>` : ""}
+    </div>
+    <div class="oacts">
+      ${cancelado(o) ? `<p class="mini">Pedido cancelado: não precisa enviar nem emitir nota.</p>` : `
+        <h3>Nota fiscal</h3>
+        ${autorizada ? `<span class="chip ok-soft" style="justify-self:start">Nota nº ${esc(nota.numero||"")} emitida${nota.ambiente==="homologacao"?" (teste)":""}</span>
+          ${nota.danfe?`<a class="btn" href="${esc(nota.danfe)}" target="_blank" rel="noopener">${ic("file")} Ver nota (DANFE)</a>`:""}
+          ${nota.chave?`<div class="chave">${esc(nota.chave)}</div><button class="btn" type="button" data-ocopy="${esc(nota.chave)}">${ic("copy")} Copiar chave</button>`:""}
+          ${nota.shopee && nota.shopee!=="enviada" ? `<p class="mini">A nota não foi enviada para a Shopee sozinha. Cole a chave em Pedidos → Enviar NF-e no Seller Centre.</p>` : `<p class="mini">Nota já enviada para a Shopee.</p>`}`
+        : (nota && /processando/.test(nota.status||"")) ? `<p class="mini">A SEFAZ ainda está analisando esta nota.</p><button class="btn" type="button" data-onfe="consultar">Ver se já saiu</button>`
+        : `${nota && nota.mensagem ? `<p class="mini neg">Último erro: ${esc(nota.mensagem)}</p>` : ""}<button class="btn primary" type="button" data-onfe="emitir">${ic("file")} Emitir nota fiscal</button>`}
+        <h3 style="margin-top:8px">Envio</h3>
+        ${podeEnviar ? `<button class="btn ${autorizada?"primary":""}" type="button" data-oship>${ic("truck")} ${o.status==="READY_TO_SHIP"?"Organizar envio e baixar etiqueta":"Baixar etiqueta"}</button>
+          ${!autorizada?`<p class="mini">Quem tem CNPJ precisa emitir a nota antes de enviar.</p>`:""}`
+          : `<p class="mini">${o.envio&&o.envio.tracking?`Rastreio: <b>${esc(o.envio.tracking)}</b>`:"Nada para fazer no envio."}</p>`}`}
+    </div>
+  </div>`;
+}
+$("#ordPer").addEventListener("change", ()=>{ ORD.carregado=false; loadOrders(true); });
+$("#ordSync").addEventListener("click", async ()=>{
+  if (!SHP[curLoja]){ renderPedidos(); toast("Conecte a Shopee primeiro", "Em Lojas, toque em Conectar Shopee.", true); return; }
+  const b=$("#ordSync"); b.disabled=true;
+  const per=$("#ordPer").value, meses = per==="mespassado" ? [prevKey(nowKey())] : (per==="7d" && new Date().getDate()<8 ? [nowKey(), prevKey(nowKey())] : [nowKey()]);
+  await syncShopee(curLoja, meses);
+  b.disabled=false; ORD.carregado=false; loadOrders(true);
+});
+document.addEventListener("click", async e=>{
+  const fil=e.target.closest("[data-ofil]"); if (fil){ ORD.filtro=fil.dataset.ofil; renderPedidos(); return; }
+  if (e.target.closest("[data-nfe-cfg]")){ openNfeCfg(); return; }
+  const cp=e.target.closest("[data-ocopy]"); if (cp){ try{ await navigator.clipboard.writeText(cp.dataset.ocopy); toast("Chave copiada", "Cole no Seller Centre se precisar."); }catch(_){ } return; }
+  const row=e.target.closest(".orow"); if(!row) return;
+  const sn=row.dataset.osn, o=ORD.lista.find(x=>x.order_sn===sn); if(!o) return;
+  if (e.target.closest("[data-otoggle]")){ ORD.aberto = ORD.aberto===sn ? null : sn; renderPedidos(); return; }
+  const nb=e.target.closest("[data-onfe]");
+  if (nb){
+    if (!NFE.configurado){ openNfeCfg(); return; }
+    nb.disabled=true; nb.textContent = nb.dataset.onfe==="emitir" ? "Emitindo…" : "Consultando…";
+    try{
+      const byItem=new Map(S.products.filter(p=>p.shopee&&p.shopee.itemId).map(p=>[String(p.shopee.itemId),p]));
+      const itens=(o.itens||[]).map(it=>{ const p=byItem.get(String(it.itemId)); const fz=(p&&p.fiscal)||{}; return {itemId:it.itemId, ncm:fz.ncm||"", cfop:fz.cfop||"", origem:fz.origem??0, unidade:fz.unidade||"UN", codigo:fz.codigo||""}; });
+      const r=await LH.fn("nfe",{acao:nb.dataset.onfe, loja_id:curLoja, order_sn:sn, itens});
+      o.nota=r.nota;
+      if (r.nota && r.nota.status==="autorizado") toast("Nota emitida", `Nota nº ${r.nota.numero||""}${r.nota.shopee==="enviada"?" já enviada para a Shopee.":"."}`);
+      else toast("Nota ainda em análise", r.nota&&r.nota.mensagem ? r.nota.mensagem : "Toque em “Ver se já saiu” daqui a pouco.");
+    }catch(err){ toast("Não deu para emitir a nota", err.message, true); }
+    renderPedidos(); renderAvisos(); return;
+  }
+  if (e.target.closest("[data-oship]")){
+    const b=e.target.closest("[data-oship]"); b.disabled=true; b.textContent="Gerando etiqueta…";
+    try{
+      const r=await LH.fn("shopee-ship",{loja_id:curLoja, order_sn:sn});
+      const bin=atob(r.pdf), u8=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i);
+      const url=URL.createObjectURL(new Blob([u8],{type:"application/pdf"}));
+      const a=document.createElement("a"); a.href=url; a.download=`etiqueta-${sn}.pdf`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url), 5000);
+      o.envio=Object.assign({},o.envio,{tracking:r.tracking}); if (o.status==="READY_TO_SHIP") o.status="PROCESSED";
+      toast("Etiqueta pronta", r.tracking?`Rastreio ${r.tracking}. O arquivo foi baixado.`:"O arquivo foi baixado.");
+    }catch(err){ toast("Não deu para gerar a etiqueta", err.message, true); }
+    renderPedidos(); renderAvisos();
+  }
+});
+
+// ---------- configurar emissor de notas ----------
+const UFS=["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"];
+async function openNfeCfg(){
+  if (!LH.online){ toast("Notas fiscais na versão online", "Entre com sua conta para configurar o emissor.", true); return; }
+  await loadNfe();
+  const e=NFE.empresa||{};
+  $("#nfeAmb").value=NFE.ambiente||"homologacao"; $("#nfeTok").value="";
+  $("#nfeTokHint").textContent = NFE.tokenFinal ? `Token salvo (termina em ${NFE.tokenFinal.slice(-4)}). Deixe vazio para manter.` : "Fica guardado só no servidor. Nem você vê depois.";
+  $("#nfeCnpj").value=e.cnpj||""; $("#nfeUf").value=e.uf||""; $("#nfeReg").value=e.regime||"simples"; $("#nfeAtv").value=e.atividade||"revenda"; $("#nfeInt").value=e.cnpjIntermediador||"";
+  $("#nfeErr").hidden=true; $("#nfeModal").hidden=false;
+}
+$("#nfeCancel").addEventListener("click", ()=>{ $("#nfeModal").hidden=true; });
+$("#nfeOk").addEventListener("click", async ()=>{
+  const b=$("#nfeOk"); b.disabled=true; $("#nfeErr").hidden=true;
+  try{
+    await LH.fn("nfe",{acao:"config", ambiente:$("#nfeAmb").value, token:$("#nfeTok").value.trim(),
+      empresa:{cnpj:$("#nfeCnpj").value, uf:$("#nfeUf").value, regime:$("#nfeReg").value, atividade:$("#nfeAtv").value, cnpjIntermediador:$("#nfeInt").value}});
+    NFE.carregado=false; await loadNfe();
+    $("#nfeModal").hidden=true; toast("Emissor configurado", NFE.ambiente==="producao" ? "As notas emitidas agora valem de verdade." : "Modo teste: as notas não valem. Teste algumas antes de mudar para Valendo.");
+    renderPedidos(); renderAvisos();
+  }catch(err){ $("#nfeErr").textContent=err.message; $("#nfeErr").hidden=false; }
+  b.disabled=false;
+});
+
+// ---------- dados fiscais do produto ----------
+function fiscalPanel(p){
+  const f=p.fiscal||{};
+  const opt=(v,l,cur)=>`<option value="${v}" ${String(cur)===String(v)?"selected":""}>${l}</option>`;
+  return `<div class="stack" style="gap:12px">
+    <div><h3>Dados para a nota fiscal</h3><p class="mini">Peça ao seu contador. Só precisa preencher uma vez por produto.</p></div>
+    <div class="form-grid">
+      <label class="field"><span>NCM (8 números)</span><input data-fis="ncm" inputmode="numeric" maxlength="10" value="${esc(f.ncm||"")}" placeholder="0000.00.00"><em>Código do tipo de produto.</em></label>
+      <label class="field"><span>Origem</span><select data-fis="origem">${opt(0,"Nacional",f.origem??0)}${opt(1,"Importado (eu importei)",f.origem)}${opt(2,"Importado (comprei no Brasil)",f.origem)}</select></label>
+      <label class="field"><span>Unidade</span><select data-fis="unidade">${["UN","PAR","KIT","CX","PC"].map(u=>opt(u,u,f.unidade||"UN")).join("")}</select></label>
+      <label class="field"><span>CFOP (opcional)</span><input data-fis="cfop" inputmode="numeric" maxlength="4" value="${esc(f.cfop||"")}" placeholder="Automático"><em>Vazio: 5102 no seu estado e 6102 fora (revenda).</em></label>
+    </div>
+    ${(f.ncm||"").replace(/\D/g,"").length===8 ? `<span class="chip ok-soft" style="justify-self:start">Pronto para nota</span>` : `<span class="chip attn" style="justify-self:start">Falta o NCM</span>`}
+  </div>`;
+}
+document.addEventListener("input", e=>{
+  const el=e.target.closest("[data-fis]"); if(!el) return;
+  const row=el.closest(".prow"); const p=row && prodById(row.dataset.id); if(!p) return;
+  p.fiscal=Object.assign({}, p.fiscal, {[el.dataset.fis]: el.dataset.fis==="origem" ? Number(el.value) : el.value});
+  scheduleSave();
+});
+document.addEventListener("change", e=>{ const el=e.target.closest("select[data-fis]"); if(el) el.dispatchEvent(new Event("input",{bubbles:true})); });
+
+// ---------- análise de anúncios ----------
+var ADS = {dias:7, carregando:false, ver:null};
+const fmtX = v => "R$ "+NUM2.format(v);
+function analisar(campanhas, dias, origem){
+  const metaPadrao = n((S.adsCfg||{}).meta ?? 10) || 10;
+  const byItem=new Map(S.products.filter(p=>p.shopee&&p.shopee.itemId).map(p=>[String(p.shopee.itemId),p]));
+  const lista = campanhas.map(c0=>{
+    const c=Object.assign({}, c0);
+    const p = c.produtoId ? prodById(c.produtoId) : ((c.itens||[]).map(i=>byItem.get(String(i))).find(Boolean) || null);
+    c.produto = p ? p.nome : null;
+    const roas = c.gasto ? c.vendas/c.gasto : 0;
+    const precoMedio = c.pedidos ? c.vendas/c.pedidos : (p ? n(p.preco) : 0);
+    let lucroAntes=null, minimo=null;
+    if (p && has(p.custo) && precoMedio){ const u=unitEcon(p,1,precoMedio); lucroAntes=u.lucro; if (u.lucro>0) minimo = precoMedio/u.lucro; }
+    const lucroDepois = lucroAntes!=null ? lucroAntes*n(c.pedidos) - n(c.gasto) : null;
+    const meta = n(c.meta) || metaPadrao;
+    const orcPer = n(c.orcamento) ? n(c.orcamento)*dias : 0;
+    const gastouTudo = orcPer ? c.gasto >= 0.85*orcPer : null;
+    const bateu = roas >= meta*0.9;
+    let veredito;
+    if (n(c.gasto)>0 && !n(c.pedidos)) veredito="semvenda";
+    else if (lucroDepois!=null) veredito = lucroDepois<0 ? "prejuizo" : (lucroDepois < 0.05*n(c.vendas) ? "limite" : "lucro");
+    else veredito = minimo ? (roas<minimo ? "prejuizo" : roas<minimo*1.3 ? "limite" : "lucro") : (bateu ? "lucro" : "limite");
+    const m20=v=>NUM.format(Math.round(v*12)/10), o20=v=>brl(Math.round(v*1.2*100)/100), oM=v=>brl(Math.round(v*0.8*100)/100);
+    let fazer;
+    if (!n(c.gasto)) fazer = "Não gastou nada no período. Se o anúncio está ligado, a meta pode estar alta demais: baixe 20%.";
+    else if (veredito==="semvenda") fazer = `Gastou ${brl(c.gasto)} e não vendeu nada. Compare preço, fotos e título com os concorrentes. Se nada mudar em mais uma semana, pause este anúncio.`;
+    else if (gastouTudo===null) fazer = bateu ? `Está batendo a meta (cada R$ 1 trouxe ${fmtX(roas)}). Pode aumentar o orçamento em 20%.` : `Não bateu a meta de ${fmtX(meta)}. Suba a meta em 20% (de ${NUM.format(meta)} para ${m20(meta)}) para a Shopee mostrar para quem compra mais.`;
+    else if (!gastouTudo && bateu) fazer = `Vende bem, mas a Shopee está mostrando pouco. Baixe a meta em 20% (de ${NUM.format(meta)} para ${NUM.format(Math.round(meta*8)/10)}) e o orçamento em 20% (de ${brl(c.orcamento)} para ${oM(c.orcamento)}).`;
+    else if (!gastouTudo && !bateu) fazer = `O problema está no anúncio: preço, fotos ou título perdem para os concorrentes. Arrume isso e baixe meta e orçamento em 20%.`;
+    else if (gastouTudo && !bateu) fazer = `Gasta todo o orçamento mas o retorno não vem. Suba a meta em 20% (de ${NUM.format(meta)} para ${m20(meta)}) e mantenha o orçamento.`;
+    else fazer = `Está dando certo. Aumente o orçamento em 20% (de ${brl(c.orcamento)} para ${o20(c.orcamento)}) e mantenha a meta.`;
+    if (veredito==="prejuizo" && lucroDepois!=null && n(c.gasto)>0) fazer = `Deu prejuízo de ${brl(-lucroDepois)} depois de pagar o anúncio. ` + fazer;
+    return Object.assign(c, {roas, lucroAntes, lucroDepois, minimo, meta, gastouTudo, bateu, veredito, fazer});
+  });
+  const ord={semvenda:0, prejuizo:1, limite:2, lucro:3};
+  lista.sort((a,b)=>ord[a.veredito]-ord[b.veredito] || b.gasto-a.gasto);
+  return {em:new Date().toISOString(), dias, origem, campanhas:lista};
+}
+const VERED = {lucro:["Dando lucro","ok-soft"], limite:["No limite","attn"], prejuizo:["Dando prejuízo","bad-soft"], semvenda:["Sem vendas","bad-soft"]};
+function renderAds(){
+  const box=$("#adsBody"); if(!box) return;
+  $$("#adsPer [data-adsdias]").forEach(b=>b.setAttribute("aria-selected", String(+b.dataset.adsdias===ADS.dias)));
+  const go=$("#adsGo"); go.disabled=ADS.carregando; go.textContent = ADS.carregando ? "Analisando…" : "Analisar anúncios";
+  const hist=S.adsAnalises||[];
+  const a = ADS.ver ? hist.find(x=>x.em===ADS.ver) : hist[0];
+  const conectado = !!SHP[curLoja] && SHP[curLoja].status!=="expirada";
+  const metaPad = n((S.adsCfg||{}).meta ?? 10) || 10;
+  const metaCfg = `<div class="admeta"><span>Sua meta: cada R$ 1 em anúncio deve trazer</span><div class="money"><input id="adsMeta" inputmode="decimal" value="${fmtMoney(metaPad)}"></div><span class="mini">em vendas (usada quando a Shopee não informa a meta)</span></div>`;
+  const tips = `<div class="tiprow">${ic("info")}<span>Mude no máximo 20% por vez e espere 3 dias para ver o efeito. Nos primeiros 7 dias de um anúncio, olhe todo dia; depois, a cada 3 dias.</span></div>`;
+  let html="";
+  if (ADS.manual){
+    html += manualAdsHtml();
+  } else if (!a){
+    html += `<div class="card empty">${selo("megaphone")}<b>Descubra quais anúncios dão lucro</b>
+      <p class="mini">${conectado ? "Escolha o período e toque em Analisar anúncios. O LucroHub busca seus anúncios na Shopee e diz o que fazer com cada um." : "Conecte a Shopee para buscar os anúncios sozinho, ou lance os números à mão."}</p>
+      <div class="row" style="justify-content:center">${conectado?"":`<button class="btn" type="button" data-adsman>Lançar à mão</button>`}</div></div>`;
+  } else {
+    const C=a.campanhas, gasto=C.reduce((s,c)=>s+n(c.gasto),0), vendas=C.reduce((s,c)=>s+n(c.vendas),0);
+    const comLucro=C.filter(c=>c.lucroDepois!=null), lucroAds=comLucro.reduce((s,c)=>s+c.lucroDepois,0);
+    const cont=k=>C.filter(c=>c.veredito===k).length;
+    html += `<div class="card adsum">
+      <div class="row between"><span class="t-label muted">${a.dias===7?"Última semana":"Último mês"} · analisado em ${dataBR(a.em)}${a.origem==="manual"?" · lançado à mão":""}</span>
+        <span class="row" style="gap:6px">${cont("lucro")?`<span class="chip ok-soft">${cont("lucro")} dando lucro</span>`:""}${cont("limite")?`<span class="chip attn">${cont("limite")} no limite</span>`:""}${cont("prejuizo")+cont("semvenda")?`<span class="chip bad-soft">${cont("prejuizo")+cont("semvenda")} com prejuízo</span>`:""}</span></div>
+      <p class="adsline">Você gastou <b>${brl(gasto)}</b> em anúncios e eles trouxeram <b>${brl(vendas)}</b> em vendas. Cada R$ 1 virou <b>${fmtX(gasto?vendas/gasto:0)}</b>.</p>
+      ${comLucro.length ? `<p class="adsline">Depois de pagar produto, taxas e anúncio, ${lucroAds>=0?`sobraram <b class="pos">${brl(lucroAds)}</b>`:`ficou um prejuízo de <b class="neg">${brl(-lucroAds)}</b>`}${comLucro.length<C.length?` (em ${comLucro.length} de ${C.length} anúncios, os outros estão sem custo do produto)`:""}.</p>` : `<p class="mini">Coloque o custo dos produtos para ver quanto sobra depois de cada anúncio.</p>`}
+      ${metaCfg}${tips}
+    </div>
+    <div class="adsgrid">${C.map(adCard).join("")}</div>`;
+  }
+  if (hist.length>1 || (hist.length && ADS.manual)) html += `<div class="stack" style="gap:8px"><h3>Análises anteriores</h3><div class="ahist">${hist.slice(0,8).map(h=>`<button class="chip" type="button" data-adsver="${esc(h.em)}" aria-pressed="${a&&a.em===h.em}">${dataBR(h.em)} · ${h.dias===7?"semana":"mês"}</button>`).join("")}</div></div>`;
+  if (!ADS.manual && a && !conectado) html += `<div><button class="btn text" type="button" data-adsman>Lançar outra análise à mão</button></div>`;
+  box.innerHTML = html;
+}
+function adCard(c){
+  const v=VERED[c.veredito];
+  return `<div class="adc ${c.veredito}">
+    <div class="top"><div><h3>${esc(c.nome)}</h3>${c.produto?`<span class="mini">${esc(c.produto)}</span>`:""}</div><span class="chip ${v[1]}">${v[0]}</span></div>
+    <div class="nums">
+      <div><span>Gastou</span><b>${brl(c.gasto)}</b></div>
+      <div><span>Vendeu</span><b>${brl(c.vendas)}</b></div>
+      <div><span>Cada R$ 1 virou</span><b>${fmtX(c.roas)}</b></div>
+      <div><span>${c.lucroDepois!=null?"Sobrou depois do anúncio":"Pedidos"}</span><b class="${c.lucroDepois!=null?(c.lucroDepois<0?"neg":"pos"):""}">${c.lucroDepois!=null ? sgn(c.lucroDepois) : NUM.format(c.pedidos)}</b></div>
+    </div>
+    ${c.minimo ? `<p class="mini">Para não ter prejuízo, cada R$ 1 precisa trazer pelo menos ${fmtX(c.minimo)}.</p>` : ""}
+    <div class="fazer"><b>O que fazer</b>${esc(c.fazer)}</div>
+  </div>`;
+}
+function manualAdsHtml(){
+  const rows = (S.adsManual && S.adsManual.length) ? S.adsManual : [{id:uid()}];
+  const pOpts = sel => `<option value="">Escolha</option>`+S.products.map(p=>`<option value="${p.id}" ${sel===p.id?"selected":""}>${esc(p.nome)}</option>`).join("");
+  return `<div class="card stack" style="gap:14px">
+    <div><h2>Lançar anúncios à mão</h2><p class="mini">Copie do painel de Anúncios da Shopee (${ADS.dias===7?"últimos 7 dias":"últimos 30 dias"}): quanto gastou, quanto vendeu e quantos pedidos.</p></div>
+    <div class="table-wrap" style="box-shadow:none;border:1px solid var(--line)"><table class="adman">
+      <thead><tr><th>Anúncio</th><th>Produto</th><th class="num">Gastou</th><th class="num">Vendeu</th><th class="num">Pedidos</th><th class="num">Orçamento por dia</th><th></th></tr></thead>
+      <tbody>${rows.map(r=>`<tr data-amr="${r.id}">
+        <td><input data-am="nome" value="${esc(r.nome||"")}" placeholder="Ex.: Meia social"></td>
+        <td><select data-am="produtoId">${pOpts(r.produtoId)}</select></td>
+        <td><input data-am="gasto" inputmode="decimal" value="${fmtMoney(r.gasto)}" placeholder="0,00"></td>
+        <td><input data-am="vendas" inputmode="decimal" value="${fmtMoney(r.vendas)}" placeholder="0,00"></td>
+        <td><input data-am="pedidos" inputmode="numeric" value="${has(r.pedidos)?fmtPlain(r.pedidos):""}" placeholder="0"></td>
+        <td><input data-am="orcamento" inputmode="decimal" value="${fmtMoney(r.orcamento)}" placeholder="opcional"></td>
+        <td><button class="exp" type="button" data-amdel aria-label="Remover">${XIC}</button></td></tr>`).join("")}</tbody>
+    </table></div>
+    <div class="row between"><button class="btn text" type="button" data-amadd>+ Adicionar anúncio</button>
+      <span class="row"><button class="btn" type="button" data-amcancel>Cancelar</button><button class="btn primary" type="button" data-amgo>Analisar</button></span></div>
+  </div>`;
+}
+document.addEventListener("input", e=>{
+  if (e.target.id==="adsMeta"){ const v=parseBR(e.target.value); S.adsCfg=Object.assign({},S.adsCfg,{meta:isFinite(v)&&v>0?v:10}); scheduleSave(); return; }
+  const el=e.target.closest("[data-am]"); if(!el) return;
+  const tr=el.closest("[data-amr]"); S.adsManual = S.adsManual && S.adsManual.length ? S.adsManual : [{id:tr.dataset.amr}];
+  const r=S.adsManual.find(x=>x.id===tr.dataset.amr); if(!r) return;
+  const k=el.dataset.am; r[k] = (k==="nome"||k==="produtoId") ? el.value : (isFinite(parseBR(el.value)) ? parseBR(el.value) : "");
+  if (k==="produtoId" && !r.nome){ const p=prodById(el.value); if(p){ r.nome=p.nome; const ni=$('[data-am="nome"]',tr); if(ni) ni.value=p.nome; } }
+  scheduleSave();
+});
+document.addEventListener("change", e=>{ const el=e.target.closest("select[data-am]"); if(el) el.dispatchEvent(new Event("input",{bubbles:true})); });
+document.addEventListener("click", async e=>{
+  const d=e.target.closest("[data-adsdias]"); if (d){ ADS.dias=+d.dataset.adsdias; ADS.ver=null; renderAds(); return; }
+  const v=e.target.closest("[data-adsver]"); if (v){ ADS.ver=v.dataset.adsver; ADS.manual=false; renderAds(); return; }
+  if (e.target.closest("[data-adsman]")){ ADS.manual=true; renderAds(); return; }
+  if (e.target.closest("[data-amcancel]")){ ADS.manual=false; renderAds(); return; }
+  if (e.target.closest("[data-amadd]")){ S.adsManual=(S.adsManual&&S.adsManual.length?S.adsManual:[{id:uid()}]).concat([{id:uid()}]); renderAds(); return; }
+  const del=e.target.closest("[data-amdel]"); if (del){ const id=del.closest("[data-amr]").dataset.amr; S.adsManual=(S.adsManual||[]).filter(x=>x.id!==id); scheduleSave(); renderAds(); return; }
+  if (e.target.closest("[data-amgo]")){
+    const camp=(S.adsManual||[]).filter(r=>n(r.gasto)>0 || n(r.vendas)>0).map(r=>({id:r.id, nome:r.nome||"Anúncio", produtoId:r.produtoId||null, gasto:n(r.gasto), vendas:n(r.vendas), pedidos:n(r.pedidos), orcamento:has(r.orcamento)?n(r.orcamento):null, itens:[]}));
+    if (!camp.length){ toast("Faltam os números", "Preencha pelo menos quanto gastou e quanto vendeu.", true); return; }
+    salvarAnalise(analisar(camp, ADS.dias, "manual")); ADS.manual=false; renderAds(); return;
+  }
+});
+function salvarAnalise(a){ S.adsAnalises=[a].concat(S.adsAnalises||[]).slice(0,12); ADS.ver=a.em; scheduleSave(); renderAvisos(); }
+$("#adsGo").addEventListener("click", async ()=>{
+  const conectado = LH.online && SHP[curLoja] && SHP[curLoja].status!=="expirada";
+  if (!conectado){ ADS.manual=true; renderAds(); return; }
+  ADS.carregando=true; ADS.manual=false; renderAds();
+  try{
+    const r=await LH.fn("shopee-ads",{loja_id:curLoja, dias:ADS.dias});
+    if (!r.campanhas.length) toast("Nenhum anúncio com gasto", `Não achei anúncios ativos ${ADS.dias===7?"na última semana":"no último mês"}.`);
+    else { salvarAnalise(analisar(r.campanhas, ADS.dias, "shopee")); toast("Análise pronta", `${r.campanhas.length} anúncio${r.campanhas.length>1?"s":""} analisado${r.campanhas.length>1?"s":""}.`); }
+  }catch(err){ toast("Não deu para buscar os anúncios", err.message+" Você pode lançar à mão.", true); ADS.manual=true; }
+  ADS.carregando=false; renderAds();
+});
+
+// ---------- tudo junto ----------
+function renderV3(){
+  if (ORD.loja!==curLoja){ ORD = Object.assign(ORD,{loja:null, lista:[], carregado:false, aberto:null}); }
+  renderTaxCfg(); renderMeta(); renderAvisos();
+  if (!$("#tab-guia").hidden) renderGuia();
+  if (!$("#tab-pedidos").hidden) loadOrders();
+  if (!$("#tab-anuncios").hidden) renderAds();
+}
+function afterBootV3(){
+  if (!S.guia || !S.guia.perfil) openOnb();
+  loadNfe().then(()=>{ if(!$("#tab-pedidos").hidden) renderPedidos(); });
+  if (LH.online && SHP[curLoja]) loadOrders();
+}
+
 // ---------- mês ----------
 function renderMonthSelect(){
   const keys = new Set(Object.keys(S.months)); keys.add(curMonth);
@@ -1773,7 +2516,7 @@ function renderLucro(r){
   $("#wf").innerHTML =
     `<div class="wfr"><span class="lbl">Vendas<small>pedidos pagos</small></span><span class="track"><span class="bar" style="left:0;width:${r.fat?100:0}%;background:#d6cdea"></span></span><span class="val">${brl(r.fat)}</span></div>` +
     step("dev","Devoluções",r.dev) +
-    step("taxas","Taxas da Shopee",r.taxas, isYear(curMonth) ? `soma de ${r.nMeses} meses` : r.usouRepasse ? "pelo repasse real" : `${NUM.format(c.comissao)}% + ${brl(c.taxaFixa)} por item`) +
+    step("taxas",isTT()?"Taxas do TikTok Shop":"Taxas da Shopee",r.taxas, isYear(curMonth) ? `soma de ${r.nMeses} meses` : r.usouRepasse ? "pelo repasse real" : taxaDesc()) +
     step("imposto","Impostos",r.imposto, n(c.imposto)? NUM.format(c.imposto)+"% sobre vendas" : "nenhum configurado") +
     step("ads","Anúncios",r.ads) +
     step("cmv","Custo dos produtos",r.cmv,cmvSub) +
@@ -2041,7 +2784,7 @@ function panel(p){
       </table></div>
       <div class="quick"><span class="mini">Adicionar:</span>
         <button class="chip" data-add="3">Kit 3</button><button class="chip" data-add="6">Kit 6</button><button class="chip" data-add="12">Kit 12</button><button class="chip" data-add="0">Outra</button></div>
-      <p class="mini">Custo = peças × custo por peça + embalagem. Taxas = ${NUM.format(c.comissao)}% + ${brl(c.taxaFixa)} por venda${n(c.imposto)?` + ${NUM.format(c.imposto)}% de imposto`:""}, ajustáveis <a href="#" data-gotax>aqui</a>.</p>
+      <p class="mini">Custo = peças × custo por peça + embalagem. Taxas = ${taxaDesc()}${n(c.frete)?` + ${brl(c.frete)} de frete`:""}${n(c.imposto)?` + ${NUM.format(c.imposto)}% de imposto`:""}, ajustáveis <a href="#" data-gotax>aqui</a>.</p>
     </div>
     <div class="prow-foot"><span></span><button class="btn text danger" data-pdel>Excluir produto</button></div>`;
   const est=stockOf(p), r=piecesPerMonth(p), ss=stockStatus(p), sp=p.shopee||null;
@@ -2078,8 +2821,8 @@ function panel(p){
     </div>
   </div>`;
   return `<div class="pbody">
-    <div class="subtabs" role="tablist"><button role="tab" data-st="custos" aria-selected="${t==="custos"}">Custos</button><button role="tab" data-st="estoque" aria-selected="${t==="estoque"}">Estoque</button></div>
-    ${t==="custos"? custos : estoque}
+    <div class="subtabs" role="tablist"><button role="tab" data-st="custos" aria-selected="${t==="custos"}">Custos</button><button role="tab" data-st="estoque" aria-selected="${t==="estoque"}">Estoque</button><button role="tab" data-st="nota" aria-selected="${t==="nota"}">Nota fiscal</button></div>
+    ${t==="custos"? custos : t==="nota"? fiscalPanel(p) : estoque}
   </div>`;
 }
 function refreshRow(p){
@@ -2270,10 +3013,10 @@ const down90 = p => Math.floor(p - 0.9 - 1e-6) + 0.9;
 const near90 = p => (up90(p)-p < p-down90(p+0.001) ? up90(p) : down90(p+0.001));
 const pcs = f => Math.max(1, n(f && f.pecas) || 1);
 const formById = id => C().formas.find(f=>f.id===id);
-function cEcon(P, pc){ const cf=S.config, com=n(cf.comissao)/100, im=n(cf.imposto)/100, tf=n(cf.taxaFixa), c=C(); const taxa=P*com+tf, imp=P*im, custo=pc*n(c.custo)+n(c.emb); const lucro=P-taxa-imp-custo; return {P,taxa,imp,custo,lucro,margem:P? lucro/P*100 : NaN}; }
+function cEcon(P, pc){ const cf=S.config, im=n(cf.imposto)/100, c=C(); const taxa=taxaVenda(P)+n(cf.frete), imp=P*im, custo=pc*n(c.custo)+n(c.emb); const lucro=P-taxa-imp-custo; return {P,taxa,imp,custo,lucro,margem:P? lucro/P*100 : NaN}; }
 function mk(lucro, pc){ const base=pc*n(C().custo); return base? lucro/base*100 : NaN; }
-function minPrice(pc){ const cf=S.config, c=C(); return up90((pc*n(c.custo)+n(c.emb)+n(cf.taxaFixa))/(1-n(cf.comissao)/100-n(cf.imposto)/100)); }
-function targetPrice(f){ if(!has(f.alvo)) return null; const cf=S.config, c=C(); return up90((pcs(f)*n(c.custo)+n(c.emb)+n(cf.taxaFixa)+n(f.alvo))/(1-n(cf.comissao)/100-n(cf.imposto)/100)); }
+function minPrice(pc){ const c=C(); return up90(precoPara(pc*n(c.custo)+n(c.emb))); }
+function targetPrice(f){ if(!has(f.alvo)) return null; const c=C(); return up90(precoPara(pcs(f)*n(c.custo)+n(c.emb)+n(f.alvo))); }
 function priceFor(f){ const c=C(); return has(c.escolhas[f.id]) ? n(c.escolhas[f.id]) : targetPrice(f); }
 function concValid(){ return C().conc.filter(x=>has(x.preco) && n(x.preco)>0); }
 const kitName = k => k===1? "Unidade" : `Kit ${k}`;
@@ -2366,7 +3109,7 @@ function renderDiagSeg(){
 
 function updateCalc(){
   const c=C(), cf=S.config;
-  $("#cTaxasNote").innerHTML = `Taxas usadas: ${NUM.format(cf.comissao)}% + ${brl(cf.taxaFixa)} por venda${n(cf.imposto)?` + ${NUM.format(cf.imposto)}% de imposto`:""}. <a href="#produtos" data-gotaxcalc>Mudar taxas</a>`;
+  $("#cTaxasNote").innerHTML = `Taxas usadas: ${taxaDesc()}${n(cf.frete)?` + ${brl(cf.frete)} de frete`:""}${n(cf.imposto)?` + ${NUM.format(cf.imposto)}% de imposto`:""}. <a href="#produtos" data-gotaxcalc>Mudar taxas</a>`;
   $$("#cForms .fitem").forEach(r=>{ const f=formById(r.dataset.fid); if(!f) return; const o=$("[data-fout]",r); const P=priceFor(f);
     if(!has(c.custo)){ o.innerHTML=`<span>Preencha quanto você paga por peça para ver o preço.</span>`; return; }
     if(!P){ o.innerHTML=`<span>Sem prejuízo a partir de <b>${brl(minPrice(pcs(f)))}</b></span><span>Diga quanto quer ganhar</span>`; return; }
@@ -2561,170 +3304,7 @@ Use só o que está visível nos prints. Responda SOMENTE com um array JSON, ex.
   finally{ btn.disabled=false; }
 });
 
-// ---------- checklist ----------
-const CHECK = [
-  "Título de 60 a 100 caracteres: produto + atributo + material + uso + cores/tamanhos + quantidade",
-  "7 a 9 fotos: capa limpa, em uso, todas as variações juntas, medidas, composição, comparativo de kits",
-  "Vídeo de 15 a 30 s como primeira mídia",
-  "Variações de cor e de quantidade (kits)",
-  "Escada de preços com desconto real por kit",
-  "Preço cheio riscado + cupom ou frete grátis",
-  "Descrição com diferenciais, especificações exatas, cuidados e chamada para o kit maior",
-  "Título, fotos e descrição sem contradição (cor, tamanho, material)",
-  "Peso e dimensões reais no cadastro",
-  "Estoque com folga de pelo menos 30 dias de venda"
-];
-function renderChecklist(){
-  $("#checklist").innerHTML = CHECK.map((t,i)=>`<li><input type="checkbox" id="ck${i}" ${S.checklist["ck"+i]?"checked":""}><label for="ck${i}">${esc(t)}</label></li>`).join("");
-  $$("#checklist input").forEach(c=> c.addEventListener("change", e=>{ S.checklist[e.target.id]=e.target.checked; scheduleSave(); }));
-}
-
-// ---------- análise por print ----------
-let files=[], sample=null, maxImgs=5, ctl=null, foco="geral";
-$$("#foco [data-foco]").forEach(b=> b.addEventListener("click", ()=>{ foco=b.dataset.foco; $$("#foco [data-foco]").forEach(x=>x.setAttribute("aria-pressed", String(x===b))); }));
-function renderThumbs(){
-  $("#thumbs").innerHTML = files.map((f,i)=>`<div class="thumb"><img alt="Print ${i+1}" src="${f.url}"><button data-rm="${i}" aria-label="Remover print">×</button></div>`).join("");
-  $$("[data-rm]").forEach(b=> b.addEventListener("click", ()=>{ URL.revokeObjectURL(files[+b.dataset.rm].url); files.splice(+b.dataset.rm,1); renderThumbs(); }));
-}
-function addFiles(list){
-  for (const f of list){
-    if (!/^image\/(png|jpeg|webp|gif)$/.test(f.type)) continue;
-    if (files.length>=maxImgs){ $("#analyzeState").textContent=`Máximo de ${maxImgs} prints por análise.`; break; }
-    files.push({file:f, url:URL.createObjectURL(f)});
-  }
-  renderThumbs();
-}
-const drop=$("#drop"), fileIn=$("#fileIn");
-drop.addEventListener("click", ()=>fileIn.click());
-drop.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); fileIn.click(); } });
-fileIn.addEventListener("change", ()=>{ addFiles(fileIn.files); fileIn.value=""; });
-["dragenter","dragover"].forEach(ev=> drop.addEventListener(ev, e=>{ e.preventDefault(); drop.classList.add("over"); }));
-["dragleave","drop"].forEach(ev=> drop.addEventListener(ev, e=>{ e.preventDefault(); drop.classList.remove("over"); }));
-drop.addEventListener("drop", e=> addFiles(e.dataTransfer.files));
-document.addEventListener("paste", e=>{ if ($("#tab-analise").hidden) return; const items=[...(e.clipboardData?.files||[])]; if(items.length) addFiles(items); });
-
-(async()=>{
-  if (!window.claude || !window.claude.use){ disableAI("A análise funciona quando o app é aberto no Claude."); return; }
-  try{
-    sample = await claude.use("sample");
-    if(!sample){ disableAI("A análise não está disponível nesta visualização."); return; }
-    const lim = await sample.limits().catch(()=>null);
-    if (lim?.images){ maxImgs = lim.images.maxCount; $("#dropHint").textContent = `PNG ou JPG, até ${maxImgs} prints. Também dá para colar com Ctrl+V.`; }
-    else $("#dropHint").textContent = "Esta visualização não envia imagens. Descreva os números na observação.";
-  }catch(e){ disableAI("A análise não está disponível nesta visualização."); }
-})();
-function disableAI(msg){ $("#analyze").disabled=true; $("#analyzeState").textContent=msg; }
-
-const STRATEGY = `ESTRATÉGIA DO APP (playbook):
-- Lojas Shopee crescem com 1 ou 2 produtos campeões sustentados por Shopee Ads. Entender por que o campeão vence, copiar isso de propósito no próximo produto, nunca depender de um só.
-- Dependência: pedidos ou vendas via Ads acima de ~80–90% do total = qualquer pausa no Ads derruba a loja. Saldo de Ads zerado é risco grave (ligar Recarga Automática).
-- Sucessor: o produto com maior conversão e pouco tráfego ("Alta taxa de conversão, porém pouco tráfego").
-- Checklist do anúncio campeão: título de 60–100 caracteres (produto + atributo principal + material + uso + cores/tamanhos + quantidade); 7–9 fotos (capa limpa, em uso, todas as variações juntas, medidas/tabela de tamanhos, composição, comparativo de kits); vídeo de 15–30 s como primeira mídia; variações de cor e de quantidade (kits); escada de preços com desconto real por kit (kit não pode custar exatamente N × unidade); preço cheio riscado + cupom ou frete grátis; descrição com especificações exatas (nada de "idealmente"), cuidados e chamada para o kit maior; título, fotos e descrição sem contradição; peso e dimensões reais no cadastro; estoque para pelo menos 30 dias de venda.
-- Produto novo sem histórico: Ads com orçamento R$ 15–20/dia e meta de ROAS 8–10 por 3–4 semanas; depois subir 12 → 15 → 18. Pausar campanha com 0 vendas em 3 meses até refazer o anúncio. Pausar campanhas de produto esgotado.
-- Prova social: cupom de seguidor, Afiliados e pedido de avaliação dentro do pacote até ~50 avaliações.
-- Referências saudável / alerta: ROAS de produto consolidado 17–25 / abaixo de 10 por 2 semanas; Ads ÷ faturamento 4–6% / acima de 10%; CTR 3,5–4,5% / abaixo de 3%; adição ao carrinho por clique ~7,5% / abaixo de 5%; conversão do anúncio 2,5–3% / abaixo de 1% após 1 mil cliques; conversão da loja ~2% / abaixo de 1,5%; pedidos via Ads ÷ pedidos totais abaixo de 70% / acima de 90%; custo por conversão R$ 1,20–1,50 / acima de 10% do preço.
-- Rotina: semanal (saldo de Ads, estoque do campeão, ROAS e CTR das 3 principais campanhas); mensal (exportar relatórios, atualizar o raio-X, testar 1 novo candidato a campeão).
-- Lucro: sempre considerar taxas da Shopee, Ads, impostos e custo do produto; um produto que vende muito com margem negativa não é campeão.
-- Linguagem: explique siglas como o vendedor fala ("cada R$ 1 em anúncio trouxe R$ 4,20 em vendas" em vez de só "ROAS 4,2").`;
-const FOCO_TXT = {
-  geral:"Visão geral da loja (Informações Gerenciais: vendas, pedidos, visitantes, conversão, ticket médio).",
-  ads:"Shopee Ads (campanhas, investimento, ROAS, CTR, conversão, saldo, metas).",
-  anuncio:"Raio-X de um anúncio: compare item por item com o checklist do anúncio campeão.",
-  produtos:"Lista de produtos e estoque: identifique campeão, sucessor, itens esgotados e itens parados."
-};
-function storeContext(){
-  const prods = S.products.map(p=>{ const u=unitEcon(p); return {nome:p.nome, preco:n(p.preco), custo_por_peca: has(p.custo)? n(p.custo):null, variacoes: varsOf(p).map(v=>({nome:v.nome,pecas:n(v.pecas)||1,preco:n(v.preco)||null})), embalagem:n(p.embalagem), lucro_por_venda: has(p.custo)? +u.lucro.toFixed(2):null}; });
-  const meses = Object.keys(S.months).sort().slice(-6).map(k=>{ const r=calcMonth(k); return {mes:k, vendas:r.fat, pedidos:n(r.m.pedidos)||null, visitantes:n(r.m.visitantes)||null, ads:r.ads, vendas_via_ads:n(r.m.vendasAds)||null, lucro_liquido:+r.lucro.toFixed(2), custo_produtos_informado:!r.semUnidades}; });
-  return JSON.stringify({loja:S.loja||null, taxas:S.config, produtos:prods, ultimos_meses:meses});
-}
-const SCHEMA = `Responda SOMENTE com um objeto JSON neste formato:
-{"titulo": "frase curta com o diagnóstico principal",
- "resumo": "2 a 4 frases em linguagem simples",
- "saude": "boa" | "atencao" | "critica",
- "metricas": [{"nome": "...", "valor": "como aparece no print", "referencia": "faixa saudável da estratégia", "status": "ok" | "atencao" | "alerta"}],
- "achados": [{"titulo": "...", "detalhe": "o que viu e por que importa, citando números", "gravidade": "alta" | "media" | "baixa"}],
- "acoes": [{"quando": "Esta semana" | "Próximas 2 semanas" | "Este mês", "acao": "ação concreta e específica"}],
- "numeros_extraidos": {"mes": "AAAA-MM ou null", "faturamento": número ou null, "pedidos": número ou null, "visitantes": número ou null, "ads": número ou null, "vendas_via_ads": número ou null}}
-Use no máximo 6 métricas, 6 achados e 6 ações, ordenados por importância.`;
-
-$("#analyze").addEventListener("click", async ()=>{
-  if (!sample) return;
-  const obs=$("#obs").value.trim();
-  if (!files.length && !obs){ $("#analyzeState").textContent="Adicione pelo menos um print ou escreva uma observação."; return; }
-  const prompt = `Você é o analista do app LucroHub, que ajuda vendedores da Shopee Brasil. Analise ${files.length? `os ${files.length} print(s) anexado(s) do Seller Centre`:"a situação descrita"} seguindo a estratégia abaixo.
-
-${STRATEGY}
-
-FOCO DESTA ANÁLISE: ${FOCO_TXT[foco]}
-OBSERVAÇÃO DO VENDEDOR: ${obs || "nenhuma"}
-DADOS QUE O VENDEDOR JÁ CADASTROU NO APP (use para cruzar com os prints e falar de lucro, não só de faturamento): ${storeContext()}
-DATA DE HOJE: ${new Date().toISOString().slice(0,10)}
-
-Regras: escreva em português do Brasil, tratando por você, frases curtas, dizendo o que aconteceu e o que fazer. Use apenas números visíveis nos prints ou nos dados cadastrados; se algo não estiver legível ou não aparecer, diga isso em vez de supor. Não invente valores. Compare sempre com as referências da estratégia. Se faltar custo de produto, lembre que o lucro real depende disso.
-
-${SCHEMA}`;
-  ctl = new AbortController();
-  $("#analyze").disabled=true; $("#stopAnalyze").hidden=false; $("#analyzeState").textContent="";
-  $("#resultBox").innerHTML = `<div class="card thinking"><span class="dot"></span><span>Lendo os prints e comparando com a estratégia…</span></div>`;
-  try{
-    const opts = {signal: ctl.signal, cache:false}; if (files.length) opts.images = files.map(f=>f.file);
-    const res = await sample.json(prompt, opts);
-    if (!res || typeof res!=="object") throw {code:"invalid_json"};
-    const entry = {id:uid(), quando:new Date().toISOString(), foco, obs, prints:files.length, result:res};
-    S.analyses.unshift(entry); S.analyses = S.analyses.slice(0,20);
-    scheduleSave(); renderResult(entry); renderHistory();
-  }catch(e){
-    const msg = {
-      cancelled:"Análise interrompida.",
-      not_granted:"Você não permitiu que este app use o Claude. Recarregue a página para permitir.",
-      rate_limited:"Muitas análises em pouco tempo. Tente de novo em alguns minutos.",
-      image_rejected:"Um dos prints não pôde ser lido. Tente outro arquivo PNG ou JPG.",
-      images_unavailable:"Esta visualização não envia imagens. Descreva os números na observação.",
-      invalid_json:"A resposta veio fora do formato. Toque em Analisar prints de novo.",
-      refused:"O Claude não analisou este conteúdo. Confira se os prints são do Seller Centre.",
-      session_expired:"Sua sessão expirou. Entre de novo no Claude.",
-    }[e?.code] || "Não foi possível concluir a análise agora. Tente de novo.";
-    $("#resultBox").innerHTML = `<div class="notice"><p>${esc(msg)}</p></div>`;
-    if (["not_granted","sampling_disabled","not_declared","capability_disabled"].includes(e?.code)) disableAI(msg);
-  }finally{ $("#analyze").disabled = !sample; $("#stopAnalyze").hidden=true; ctl=null; }
-});
-$("#stopAnalyze").addEventListener("click", ()=> ctl?.abort());
-
-function renderResult(entry){
-  const r=entry.result||{};
-  const sev = {boa:["ok-soft","Saúde boa"], atencao:["attn","Pede atenção"], critica:["bad-soft","Situação crítica"]}[r.saude] || ["neutral","Análise"];
-  const stChip = s=> ({ok:["ok-soft","ok"],atencao:["attn","atenção"],alerta:["bad-soft","alerta"]}[s]||["neutral",""]);
-  const gChip = g=> ({alta:["bad-soft","↓ Alta"],media:["attn","Média"],baixa:["ok-soft","Baixa"]}[g]||["neutral","—"]);
-  const metr = (r.metricas||[]).map(m=>{ const c=stChip(m.status); return `<div class="metric"><div class="row between"><span class="t-label muted">${esc(m.nome)}</span><span class="chip ${c[0]}">${c[1]}</span></div><span class="mv">${esc(m.valor)}</span><span class="t-caption muted">Referência: ${esc(m.referencia)}</span></div>`; }).join("");
-  const ach = (r.achados||[]).map(a=>{ const c=gChip(a.gravidade); return `<div class="finding"><span class="chip ${c[0]}">${c[1]}</span><div><b>${esc(a.titulo)}</b><p class="muted" style="margin-top:2px">${esc(a.detalhe)}</p></div></div>`; }).join("");
-  const acs = (r.acoes||[]).map(a=>`<li><span class="chip neutral" style="justify-self:start">${esc(a.quando)}</span><span>${esc(a.acao)}</span></li>`).join("");
-  const ne = r.numeros_extraidos||{};
-  const keys=["faturamento","pedidos","visitantes","ads","vendas_via_ads"].filter(k=>typeof ne[k]==="number");
-  const mesAlvo = /^\d{4}-\d{2}$/.test(ne.mes||"") ? ne.mes : curMonth;
-  const quando = new Date(entry.quando).toLocaleString("pt-BR",{dateStyle:"short",timeStyle:"short"});
-  const nomes={faturamento:"vendas",pedidos:"pedidos",visitantes:"visitantes",ads:"gasto com anúncios",vendas_via_ads:"vendas via anúncios"};
-  $("#resultBox").innerHTML = `<div class="card stack" style="gap:var(--space-6)">
-    <div class="row between" style="align-items:flex-start"><div><span class="t-caption muted">${quando} · ${entry.prints} print(s)</span><h2 style="margin-top:2px">${esc(r.titulo||"Resultado da análise")}</h2></div><span class="chip ${sev[0]}">${sev[1]}</span></div>
-    <p>${esc(r.resumo||"")}</p>
-    ${metr?`<div class="metrics">${metr}</div>`:""}
-    ${ach?`<div><h2>O que encontrei</h2><div class="findings" style="margin-top:var(--space-2)">${ach}</div></div>`:""}
-    ${acs?`<div><h2>O que fazer</h2><ul class="actions-list" style="margin-top:var(--space-2)">${acs}</ul></div>`:""}
-    ${keys.length?`<div class="notice"><p><b>Números lidos nos prints:</b> ${keys.map(k=>nomes[k]+" "+(["pedidos","visitantes"].includes(k)?NUM.format(ne[k]):brl(ne[k]))).join(" · ")}</p><button class="btn" id="applyNums">Lançar em ${monthLabel(mesAlvo)}</button></div>`:""}
-  </div>`;
-  const ap=$("#applyNums");
-  if (ap) ap.onclick=()=>{
-    if(!S.months[mesAlvo]) S.months[mesAlvo]={};
-    const m=S.months[mesAlvo], map={faturamento:"faturamento",pedidos:"pedidos",visitantes:"visitantes",ads:"ads",vendas_via_ads:"vendasAds"};
-    for (const [a,b] of Object.entries(map)) if (typeof ne[a]==="number") m[b]=ne[a];
-    curMonth=mesAlvo; scheduleSave(); renderAll(); ap.textContent="Lançado"; ap.disabled=true;
-  };
-}
-function renderHistory(){
-  const list=S.analyses||[];
-  $("#historyPanel").hidden = !list.length;
-  $("#history").innerHTML = list.map(a=>`<button class="btn" data-h="${a.id}"><span>${esc(a.result?.titulo||"Análise")}</span><span class="t-caption muted">${new Date(a.quando).toLocaleDateString("pt-BR")}</span></button>`).join("");
-  $$("[data-h]").forEach(b=> b.addEventListener("click", ()=>{ const a=list.find(x=>x.id===b.dataset.h); if(a){ renderResult(a); $("#resultBox").scrollIntoView({behavior:"smooth",block:"start"}); } }));
-}
+let sample=null;
 
 // ---------- início ----------
 let startTab = location.hash.slice(1);
@@ -2738,6 +3318,7 @@ if (window.__LH && window.__LH.online) document.documentElement.classList.add("l
 (window.__LH && window.__LH.ready || Promise.resolve()).then(async ()=>{
   try{ await boot(); }catch(e){ console.error(e); }
   try{ await afterBootShopee(); }catch(e){ console.error(e); }
+  try{ afterBootV3(); }catch(e){ console.error(e); }
   const a=$("#acct"); if (a && window.__LH && window.__LH.user){ a.hidden=false; $("#acctEmail").textContent=window.__LH.user.email||""; }
   document.documentElement.classList.remove("lh-wait"); renderAll();
 });
