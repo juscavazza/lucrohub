@@ -1,7 +1,6 @@
-// Configuração do LucroHub (preencha depois de criar o projeto no Supabase).
+// Configuração do LucroHub.
 // Estes dois valores são públicos por natureza: quem protege os dados são as regras do banco (RLS).
-// Deixe vazio para usar o app só no navegador, sem login.
 window.LUCROHUB_CONFIG = {
-  supabaseUrl: "",       // ex.: "https://abcdefghijkl.supabase.co"
-  supabaseAnonKey: ""    // Settings → API → "anon public"
+  supabaseUrl: "https://mainhhhpqaulcsuldbbi.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1haW5oaGhwcWF1bGNzdWxkYmJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ0NDU0NTgsImV4cCI6MjExMDAyMTQ1OH0.TDFnA-F4QSR4F63kOH22adAhjo1zOWsF-sFwVDkhwtM"
 };
